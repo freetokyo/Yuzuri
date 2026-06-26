@@ -1,0 +1,1862 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "category.profile": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic Information"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基本情報"
+          }
+        }
+      }
+    },
+    "category.lifeStory": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Life Story (optional)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自分史（任意）"
+          }
+        }
+      }
+    },
+    "category.assets.bank": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bank Accounts"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "預貯金"
+          }
+        }
+      }
+    },
+    "category.assets.securities": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Investments & Securities"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有価証券"
+          }
+        }
+      }
+    },
+    "category.assets.insurance": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insurance"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保険"
+          }
+        }
+      }
+    },
+    "category.assets.realEstate": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Real Estate"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不動産"
+          }
+        }
+      }
+    },
+    "category.assets.cards": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards, E-money & Points"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カード・電子マネー・ポイント"
+          }
+        }
+      }
+    },
+    "category.assets.pension": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pension & Retirement"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "年金"
+          }
+        }
+      }
+    },
+    "category.assets.liabilities": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Debts & Liabilities"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "負債"
+          }
+        }
+      }
+    },
+    "category.assets.other": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other Assets"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "その他の資産"
+          }
+        }
+      }
+    },
+    "category.recurringPayments": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recurring Payments"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "定期支払い"
+          }
+        }
+      }
+    },
+    "category.digitalLegacy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Digital Legacy"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "デジタル遺品"
+          }
+        }
+      }
+    },
+    "category.medical": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medical & Care Wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "医療・介護の希望"
+          }
+        }
+      }
+    },
+    "category.emergencyCard": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emergency Card"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "緊急医療カード"
+          }
+        }
+      }
+    },
+    "category.funeral": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funeral & Burial Wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "葬儀・お墓の希望"
+          }
+        }
+      }
+    },
+    "category.estatePlanning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estate & Will"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相続・遺言"
+          }
+        }
+      }
+    },
+    "category.pets": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pets"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ペット"
+          }
+        }
+      }
+    },
+    "category.contacts": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "People to Notify"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "連絡してほしい人"
+          }
+        }
+      }
+    },
+    "category.messages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages to Loved Ones"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大切な人へのメッセージ"
+          }
+        }
+      }
+    },
+    "category.documentLocations": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where Documents Are Kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書類のありか"
+          }
+        }
+      }
+    },
+    "field.profile.fullName": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full name"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "氏名"
+          }
+        }
+      }
+    },
+    "field.profile.dateOfBirth": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date of birth"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "生年月日"
+          }
+        }
+      }
+    },
+    "field.profile.placeOfBirth": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place of birth"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出生地"
+          }
+        }
+      }
+    },
+    "field.profile.bloodType": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blood type"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "血液型"
+          }
+        }
+      }
+    },
+    "field.profile.nationalIdLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where ID documents are kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "身分証の保管場所"
+          }
+        }
+      }
+    },
+    "field.profile.emergencyContacts": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emergency contacts"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "緊急連絡先"
+          }
+        }
+      }
+    },
+    "field.lifeStory.biography": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brief life story"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "略歴・思い出"
+          }
+        }
+      }
+    },
+    "field.lifeStory.values": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Values and beliefs to pass on"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "伝えたい価値観"
+          }
+        }
+      }
+    },
+    "field.assets.bank.institution": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bank name"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金融機関名"
+          }
+        }
+      }
+    },
+    "field.assets.bank.branch": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Branch"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "支店"
+          }
+        }
+      }
+    },
+    "field.assets.bank.accountType": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Account type"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "口座種別"
+          }
+        }
+      }
+    },
+    "field.assets.bank.purpose": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purpose / notes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用途・メモ"
+          }
+        }
+      }
+    },
+    "field.assets.bank.accountNumber": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Account number"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "口座番号"
+          }
+        }
+      }
+    },
+    "field.assets.securities.brokerage": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brokerage / firm"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "証券会社"
+          }
+        }
+      }
+    },
+    "field.assets.securities.account": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Account reference"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "口座情報"
+          }
+        }
+      }
+    },
+    "field.assets.securities.holdings": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Holdings overview"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保有銘柄の概要"
+          }
+        }
+      }
+    },
+    "field.assets.insurance.insurer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insurer"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保険会社"
+          }
+        }
+      }
+    },
+    "field.assets.insurance.policyType": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Policy type"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保険の種類"
+          }
+        }
+      }
+    },
+    "field.assets.insurance.policyLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where the policy is kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "証券の保管場所"
+          }
+        }
+      }
+    },
+    "field.assets.insurance.beneficiary": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beneficiary designation"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "受取人"
+          }
+        }
+      }
+    },
+    "field.assets.realEstate.location": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property location"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "所在地"
+          }
+        }
+      }
+    },
+    "field.assets.realEstate.type": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property type"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "種別"
+          }
+        }
+      }
+    },
+    "field.assets.realEstate.deedLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where the deed / title is kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "権利証の保管場所"
+          }
+        }
+      }
+    },
+    "field.assets.cards.creditCards": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Credit / debit cards (issuer, not full number)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "クレジット／デビットカード（発行会社）"
+          }
+        }
+      }
+    },
+    "field.assets.cards.eMoney": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "E-money / wallets"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "電子マネー・ウォレット"
+          }
+        }
+      }
+    },
+    "field.assets.cards.points": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Points / miles"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ポイント・マイル"
+          }
+        }
+      }
+    },
+    "field.assets.pension.schemes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Public / private pension schemes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "公的・私的年金"
+          }
+        }
+      }
+    },
+    "field.assets.pension.numberLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where pension / reference numbers are kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "年金番号の保管場所"
+          }
+        }
+      }
+    },
+    "field.assets.pension.number": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pension / reference number"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "基礎年金番号"
+          }
+        }
+      }
+    },
+    "field.assets.liabilities.lender": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lender"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "借入先"
+          }
+        }
+      }
+    },
+    "field.assets.liabilities.balance": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Approximate balance"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "残高（概算）"
+          }
+        }
+      }
+    },
+    "field.assets.liabilities.guarantees": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarantees / co-signed obligations"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "連帯保証など"
+          }
+        }
+      }
+    },
+    "field.assets.other.safeDeposit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safe deposit box"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "貸金庫"
+          }
+        }
+      }
+    },
+    "field.assets.other.crypto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crypto assets (where access is kept)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暗号資産（アクセス方法のありか）"
+          }
+        }
+      }
+    },
+    "field.assets.other.valuables": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valuables / collectibles"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "貴金属・コレクション"
+          }
+        }
+      }
+    },
+    "field.recurringPayments.subscriptions": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscriptions to cancel / continue"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "解約／継続するサブスク"
+          }
+        }
+      }
+    },
+    "field.recurringPayments.utilities": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Utilities on auto-pay"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自動引き落としの公共料金"
+          }
+        }
+      }
+    },
+    "field.recurringPayments.memberships": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memberships / dues"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "会費・メンバーシップ"
+          }
+        }
+      }
+    },
+    "field.digitalLegacy.accounts": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Key online accounts"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主要なオンラインアカウント"
+          }
+        }
+      }
+    },
+    "field.digitalLegacy.deviceUnlock": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to unlock my devices (policy / where kept)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "端末のロック解除方法（方針・ありか）"
+          }
+        }
+      }
+    },
+    "field.digitalLegacy.socialMedia": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What to do with social media / photos"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SNS・写真の取り扱い"
+          }
+        }
+      }
+    },
+    "field.digitalLegacy.passwordLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where passwords are kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パスワードの保管場所"
+          }
+        }
+      }
+    },
+    "field.digitalLegacy.passwords": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passwords (not recommended)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パスワード（記録は非推奨）"
+          }
+        }
+      }
+    },
+    "field.medical.conditions": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conditions"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "持病"
+          }
+        }
+      }
+    },
+    "field.medical.medications": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medications"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "常用薬"
+          }
+        }
+      }
+    },
+    "field.medical.allergies": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allergies"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アレルギー"
+          }
+        }
+      }
+    },
+    "field.medical.primaryDoctor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primary doctor"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "かかりつけ医"
+          }
+        }
+      }
+    },
+    "field.medical.advanceDirective": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Living will / advance directive wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "延命治療・事前指示の希望"
+          }
+        }
+      }
+    },
+    "field.medical.organDonation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Organ donation wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "臓器提供の意思"
+          }
+        }
+      }
+    },
+    "field.medical.careWishes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Long-term care wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "介護の希望"
+          }
+        }
+      }
+    },
+    "field.emergencyCard.note": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Printable one-page summary of key medical info"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "携帯用の医療サマリ"
+          }
+        }
+      }
+    },
+    "field.funeral.style": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funeral type / scale"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "葬儀の形式・規模"
+          }
+        }
+      }
+    },
+    "field.funeral.religion": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Religion / customs"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "宗教・しきたり"
+          }
+        }
+      }
+    },
+    "field.funeral.notify": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who to notify"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "連絡してほしい人"
+          }
+        }
+      }
+    },
+    "field.funeral.burial": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Burial / cremation wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "埋葬・火葬の希望"
+          }
+        }
+      }
+    },
+    "field.estatePlanning.willExists": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Does a will exist?"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "遺言書の有無"
+          }
+        }
+      }
+    },
+    "field.estatePlanning.willLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where the will is kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "遺言書の保管場所"
+          }
+        }
+      }
+    },
+    "field.estatePlanning.executor": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Executor"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "遺言執行者"
+          }
+        }
+      }
+    },
+    "field.estatePlanning.beneficiaries": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heirs / beneficiaries"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相続人"
+          }
+        }
+      }
+    },
+    "field.estatePlanning.poaLocation": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Where power of attorney documents are kept"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "委任状・任意後見契約の保管場所"
+          }
+        }
+      }
+    },
+    "field.estatePlanning.professionals": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Professionals consulted (attorney, etc.)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相談中の専門家"
+          }
+        }
+      }
+    },
+    "field.pets.type": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pet(s)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ペット"
+          }
+        }
+      }
+    },
+    "field.pets.caretaker": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who will care for them"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "世話の引き継ぎ先"
+          }
+        }
+      }
+    },
+    "field.pets.vet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veterinarian"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "かかりつけ獣医"
+          }
+        }
+      }
+    },
+    "field.contacts.notify": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "People to notify"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "連絡してほしい人"
+          }
+        }
+      }
+    },
+    "field.contacts.doNotNotify": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "People not to notify"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "連絡しなくてよい人"
+          }
+        }
+      }
+    },
+    "field.messages.body": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A message to leave"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "遺すメッセージ"
+          }
+        }
+      }
+    },
+    "field.documentLocations.map": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Location of key documents (deeds, policies, IDs, etc.)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "主要書類の保管場所（権利証・証券・身分証など）"
+          }
+        }
+      }
+    },
+    "field.profile.registeredDomicile": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registered domicile (honseki)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本籍"
+          }
+        }
+      }
+    },
+    "field.funeral.buddhistSect": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Religious sect"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "宗派"
+          }
+        }
+      }
+    },
+    "field.funeral.kouden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Condolence money (koden) wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "香典の取り扱いの希望"
+          }
+        }
+      }
+    },
+    "field.funeral.graveSuccession": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grave succession"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お墓の承継について"
+          }
+        }
+      }
+    },
+    "disclaimer.onboarding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yuzuri is a tool for organizing and recording the information that matters to you. Everything you enter is stored only on this device and is never sent anywhere. Yuzuri does not provide legal, tax, or medical advice. For important decisions, please consult a qualified professional in your country."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ユズリは、あなたの大切な情報を整理して残すための記録ツールです。入力した情報はこの端末内にのみ保存され、外部に送信されることはありません。本アプリは法律・税務・医療に関する専門的な助言を行うものではありません。重要なご判断は、それぞれの専門家にご相談ください。"
+          }
+        }
+      }
+    },
+    "disclaimer.export": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This document may contain sensitive information such as accounts or IDs. Please be careful where you store it and with whom you share it. Note that this document is not a will and has no legal effect."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "この書類には、口座やID等の機微な情報が含まれる場合があります。保管場所と共有する相手に十分ご注意ください。なお、この書類は遺言書ではなく、法的な効力はありません。"
+          }
+        }
+      }
+    },
+    "disclaimer.will": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An ending note is not a legally binding will and has no legal effect. For a valid will, or for matters of inheritance and probate, please consult an attorney or other qualified legal professional in your jurisdiction. Yuzuri does not provide legal advice, legal judgments, or legal services."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エンディングノートは遺言書とは異なり、法的な効力はありません。法的に有効な遺言の作成や、相続の手続きについては、弁護士・司法書士などの専門家にご相談ください。本アプリは、法律事務の代行や法的な助言・判断を行うものではありません（弁護士法第72条）。"
+          }
+        }
+      }
+    },
+    "disclaimer.tax": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For specific questions about taxes, please consult a qualified tax professional. Yuzuri does not provide tax advice or tax services."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "税金や相続税に関する具体的なご判断は、税理士などの専門家にご相談ください。本アプリは、税務相談や税務代理を行うものではありません（税理士法）。"
+          }
+        }
+      }
+    },
+    "disclaimer.medical": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What you record here reflects your own wishes and is not medical advice. Please consult a doctor or other professional regarding treatment and care. The legal status of advance directives or end-of-life wishes may differ depending on where you live."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ここに記録する内容は、あなたご自身の希望の記録であり、医療上の助言ではありません。治療やケアの方針については、医師など専門職にご相談ください。延命治療や事前の意思表示の法的な取り扱いは、地域によって異なる場合があります。"
+          }
+        }
+      }
+    },
+    "disclaimer.sensitive": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording the actual details, such as passwords or account numbers, carries a risk of exposure. Where possible, we recommend recording only where the item is kept. If you do record such details, they are encrypted on this device and are hidden by default when you export."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "パスワードや口座番号などの情報そのものを記録すると、漏えいの危険があります。可能な限り「保管場所（どこにあるか）」だけを記録することをおすすめします。記録する場合、その情報はこの端末内で暗号化して保存され、書き出し時は既定で伏せられます。"
+          }
+        }
+      }
+    },
+    "app.name": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yuzuri"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ユズリ"
+          }
+        }
+      }
+    },
+    "home.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ホーム"
+          }
+        }
+      }
+    },
+    "home.progress": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completion"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記入率"
+          }
+        }
+      }
+    },
+    "home.nextSuggestion": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggested next"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次に書くとよい項目"
+          }
+        }
+      }
+    },
+    "common.save": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存"
+          }
+        }
+      }
+    },
+    "common.done": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "完了"
+          }
+        }
+      }
+    },
+    "common.cancel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
+          }
+        }
+      }
+    },
+    "common.delete": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "削除"
+          }
+        }
+      }
+    },
+    "common.notEntered": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not entered"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未記入"
+          }
+        }
+      }
+    },
+    "common.inProgress": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In progress"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記入中"
+          }
+        }
+      }
+    },
+    "settings.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
+        }
+      }
+    },
+    "export.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書き出し"
+          }
+        }
+      }
+    },
+    "export.safe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safe version"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安全版"
+          }
+        }
+      }
+    },
+    "export.full": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full version"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部入り版"
+          }
+        }
+      }
+    },
+    "onboarding.title": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ようこそ"
+          }
+        }
+      }
+    },
+    "paywall.unlock": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock export & backup"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "書き出し・バックアップをアンロック"
+          }
+        }
+      }
+    },
+    "lock.prompt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock Yuzuri"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ユズリのロックを解除"
+          }
+        }
+      }
+    },
+    "customItem.add": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add custom item"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム項目を追加"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

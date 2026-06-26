@@ -1,0 +1,56 @@
+{
+  "locale": "ja",
+  "templateVersion": "1.0",
+  "extends": "base",
+  "note": "Japanese overlay. Adds Japan-specific items on top of base. Real labels resolve from String Catalog (ja); defaultLabel is a Japanese fallback.",
+  "removeCategories": [],
+  "removeFields": [],
+  "addCategories": [],
+  "addFields": [
+    {
+      "categoryKey": "profile",
+      "afterFieldKey": "profile.placeOfBirth",
+      "field": {
+        "fieldKey": "profile.registeredDomicile",
+        "labelKey": "field.profile.registeredDomicile",
+        "defaultLabel": "本籍",
+        "type": "text",
+        "defaultSensitive": false
+      }
+    },
+    {
+      "categoryKey": "funeral",
+      "afterFieldKey": "funeral.religion",
+      "field": {
+        "fieldKey": "funeral.buddhistSect",
+        "labelKey": "field.funeral.buddhistSect",
+        "defaultLabel": "宗派",
+        "type": "text",
+        "defaultSensitive": false
+      }
+    },
+    {
+      "categoryKey": "funeral",
+      "afterFieldKey": "funeral.buddhistSect",
+      "field": {
+        "fieldKey": "funeral.kouden",
+        "labelKey": "field.funeral.kouden",
+        "defaultLabel": "香典の取り扱いの希望",
+        "type": "text",
+        "defaultSensitive": false
+      }
+    },
+    {
+      "categoryKey": "funeral",
+      "afterFieldKey": "funeral.burial",
+      "field": {
+        "fieldKey": "funeral.graveSuccession",
+        "labelKey": "field.funeral.graveSuccession",
+        "defaultLabel": "お墓の承継について",
+        "type": "multiline",
+        "defaultSensitive": false
+      }
+    }
+  ],
+  "overrides": {}
+}

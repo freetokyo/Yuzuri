@@ -1,0 +1,23 @@
+{
+  "app": {
+    "bundle_id": "com.chen.yuzuri",
+    "app_id": "TODO_ADAM_ID_FROM_ASC_WEB_UI"
+  },
+  "managed_existing_localizations": [
+    {
+      "locale": "ja",
+      "app_info": {
+        "name": "ユズリ",
+        "subtitle": "TODO ≤30字",
+        "privacyPolicyUrl": "https://freetokyo.github.io/web/yuzuri/privacy.html"
+      },
+      "version": {
+        "description": "TODO アプリ説明（≤4000字）。一般的な情報提供・学習目的である旨と、完全オフライン・データ収集なし・買い切りを明記。",
+        "keywords": "TODO,カンマ区切り,≤100字",
+        "promotionalText": "TODO ≤170字のプロモ文。",
+        "marketingUrl": "https://freetokyo.github.io/web/yuzuri/index.html",
+        "supportUrl": "https://freetokyo.github.io/web/yuzuri/support.html"
+      }
+    }
+  ]
+}

@@ -1,0 +1,670 @@
+{
+  "templateVersion": "1.0",
+  "role": "base",
+  "note": "Locale-neutral backbone. Locale files extend this via overlay (addFields/removeFields/addCategories/overrides). Real labels resolve from String Catalog by labelKey; defaultLabel is an English dev fallback.",
+  "fieldTypes": [
+    "text",
+    "multiline",
+    "date",
+    "choice",
+    "sensitive"
+  ],
+  "categories": [
+    {
+      "categoryKey": "profile",
+      "labelKey": "category.profile",
+      "defaultLabel": "Basic Information",
+      "order": 1,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "profile.fullName",
+          "labelKey": "field.profile.fullName",
+          "defaultLabel": "Full name",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "profile.dateOfBirth",
+          "labelKey": "field.profile.dateOfBirth",
+          "defaultLabel": "Date of birth",
+          "type": "date",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "profile.placeOfBirth",
+          "labelKey": "field.profile.placeOfBirth",
+          "defaultLabel": "Place of birth",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "profile.bloodType",
+          "labelKey": "field.profile.bloodType",
+          "defaultLabel": "Blood type",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "profile.nationalIdLocation",
+          "labelKey": "field.profile.nationalIdLocation",
+          "defaultLabel": "Where ID documents are kept",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "profile.emergencyContacts",
+          "labelKey": "field.profile.emergencyContacts",
+          "defaultLabel": "Emergency contacts",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "lifeStory",
+      "labelKey": "category.lifeStory",
+      "defaultLabel": "Life Story (optional)",
+      "order": 2,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "lifeStory.biography",
+          "labelKey": "field.lifeStory.biography",
+          "defaultLabel": "Brief life story",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "lifeStory.values",
+          "labelKey": "field.lifeStory.values",
+          "defaultLabel": "Values and beliefs to pass on",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.bank",
+      "labelKey": "category.assets.bank",
+      "defaultLabel": "Bank Accounts",
+      "order": 3,
+      "disclaimerKey": "disclaimer.tax",
+      "fields": [
+        {
+          "fieldKey": "assets.bank.institution",
+          "labelKey": "field.assets.bank.institution",
+          "defaultLabel": "Bank name",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.bank.branch",
+          "labelKey": "field.assets.bank.branch",
+          "defaultLabel": "Branch",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.bank.accountType",
+          "labelKey": "field.assets.bank.accountType",
+          "defaultLabel": "Account type",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.bank.purpose",
+          "labelKey": "field.assets.bank.purpose",
+          "defaultLabel": "Purpose / notes",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.bank.accountNumber",
+          "labelKey": "field.assets.bank.accountNumber",
+          "defaultLabel": "Account number",
+          "type": "sensitive",
+          "defaultSensitive": true
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.securities",
+      "labelKey": "category.assets.securities",
+      "defaultLabel": "Investments & Securities",
+      "order": 4,
+      "disclaimerKey": "disclaimer.tax",
+      "fields": [
+        {
+          "fieldKey": "assets.securities.brokerage",
+          "labelKey": "field.assets.securities.brokerage",
+          "defaultLabel": "Brokerage / firm",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.securities.account",
+          "labelKey": "field.assets.securities.account",
+          "defaultLabel": "Account reference",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.securities.holdings",
+          "labelKey": "field.assets.securities.holdings",
+          "defaultLabel": "Holdings overview",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.insurance",
+      "labelKey": "category.assets.insurance",
+      "defaultLabel": "Insurance",
+      "order": 5,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "assets.insurance.insurer",
+          "labelKey": "field.assets.insurance.insurer",
+          "defaultLabel": "Insurer",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.insurance.policyType",
+          "labelKey": "field.assets.insurance.policyType",
+          "defaultLabel": "Policy type",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.insurance.policyLocation",
+          "labelKey": "field.assets.insurance.policyLocation",
+          "defaultLabel": "Where the policy is kept",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.insurance.beneficiary",
+          "labelKey": "field.assets.insurance.beneficiary",
+          "defaultLabel": "Beneficiary designation",
+          "type": "text",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.realEstate",
+      "labelKey": "category.assets.realEstate",
+      "defaultLabel": "Real Estate",
+      "order": 6,
+      "disclaimerKey": "disclaimer.tax",
+      "fields": [
+        {
+          "fieldKey": "assets.realEstate.location",
+          "labelKey": "field.assets.realEstate.location",
+          "defaultLabel": "Property location",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.realEstate.type",
+          "labelKey": "field.assets.realEstate.type",
+          "defaultLabel": "Property type",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.realEstate.deedLocation",
+          "labelKey": "field.assets.realEstate.deedLocation",
+          "defaultLabel": "Where the deed / title is kept",
+          "type": "text",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.cards",
+      "labelKey": "category.assets.cards",
+      "defaultLabel": "Cards, E-money & Points",
+      "order": 7,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "assets.cards.creditCards",
+          "labelKey": "field.assets.cards.creditCards",
+          "defaultLabel": "Credit / debit cards (issuer, not full number)",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.cards.eMoney",
+          "labelKey": "field.assets.cards.eMoney",
+          "defaultLabel": "E-money / wallets",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.cards.points",
+          "labelKey": "field.assets.cards.points",
+          "defaultLabel": "Points / miles",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.pension",
+      "labelKey": "category.assets.pension",
+      "defaultLabel": "Pension & Retirement",
+      "order": 8,
+      "disclaimerKey": "disclaimer.tax",
+      "fields": [
+        {
+          "fieldKey": "assets.pension.schemes",
+          "labelKey": "field.assets.pension.schemes",
+          "defaultLabel": "Public / private pension schemes",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.pension.numberLocation",
+          "labelKey": "field.assets.pension.numberLocation",
+          "defaultLabel": "Where pension / reference numbers are kept",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.pension.number",
+          "labelKey": "field.assets.pension.number",
+          "defaultLabel": "Pension / reference number",
+          "type": "sensitive",
+          "defaultSensitive": true
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.liabilities",
+      "labelKey": "category.assets.liabilities",
+      "defaultLabel": "Debts & Liabilities",
+      "order": 9,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "assets.liabilities.lender",
+          "labelKey": "field.assets.liabilities.lender",
+          "defaultLabel": "Lender",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.liabilities.balance",
+          "labelKey": "field.assets.liabilities.balance",
+          "defaultLabel": "Approximate balance",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.liabilities.guarantees",
+          "labelKey": "field.assets.liabilities.guarantees",
+          "defaultLabel": "Guarantees / co-signed obligations",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "assets.other",
+      "labelKey": "category.assets.other",
+      "defaultLabel": "Other Assets",
+      "order": 10,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "assets.other.safeDeposit",
+          "labelKey": "field.assets.other.safeDeposit",
+          "defaultLabel": "Safe deposit box",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.other.crypto",
+          "labelKey": "field.assets.other.crypto",
+          "defaultLabel": "Crypto assets (where access is kept)",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "assets.other.valuables",
+          "labelKey": "field.assets.other.valuables",
+          "defaultLabel": "Valuables / collectibles",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "recurringPayments",
+      "labelKey": "category.recurringPayments",
+      "defaultLabel": "Recurring Payments",
+      "order": 11,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "recurringPayments.subscriptions",
+          "labelKey": "field.recurringPayments.subscriptions",
+          "defaultLabel": "Subscriptions to cancel / continue",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "recurringPayments.utilities",
+          "labelKey": "field.recurringPayments.utilities",
+          "defaultLabel": "Utilities on auto-pay",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "recurringPayments.memberships",
+          "labelKey": "field.recurringPayments.memberships",
+          "defaultLabel": "Memberships / dues",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "digitalLegacy",
+      "labelKey": "category.digitalLegacy",
+      "defaultLabel": "Digital Legacy",
+      "order": 12,
+      "disclaimerKey": "disclaimer.sensitive",
+      "fields": [
+        {
+          "fieldKey": "digitalLegacy.accounts",
+          "labelKey": "field.digitalLegacy.accounts",
+          "defaultLabel": "Key online accounts",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "digitalLegacy.deviceUnlock",
+          "labelKey": "field.digitalLegacy.deviceUnlock",
+          "defaultLabel": "How to unlock my devices (policy / where kept)",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "digitalLegacy.socialMedia",
+          "labelKey": "field.digitalLegacy.socialMedia",
+          "defaultLabel": "What to do with social media / photos",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "digitalLegacy.passwordLocation",
+          "labelKey": "field.digitalLegacy.passwordLocation",
+          "defaultLabel": "Where passwords are kept",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "digitalLegacy.passwords",
+          "labelKey": "field.digitalLegacy.passwords",
+          "defaultLabel": "Passwords (not recommended)",
+          "type": "sensitive",
+          "defaultSensitive": true
+        }
+      ]
+    },
+    {
+      "categoryKey": "medical",
+      "labelKey": "category.medical",
+      "defaultLabel": "Medical & Care Wishes",
+      "order": 13,
+      "disclaimerKey": "disclaimer.medical",
+      "fields": [
+        {
+          "fieldKey": "medical.conditions",
+          "labelKey": "field.medical.conditions",
+          "defaultLabel": "Conditions",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "medical.medications",
+          "labelKey": "field.medical.medications",
+          "defaultLabel": "Medications",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "medical.allergies",
+          "labelKey": "field.medical.allergies",
+          "defaultLabel": "Allergies",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "medical.primaryDoctor",
+          "labelKey": "field.medical.primaryDoctor",
+          "defaultLabel": "Primary doctor",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "medical.advanceDirective",
+          "labelKey": "field.medical.advanceDirective",
+          "defaultLabel": "Living will / advance directive wishes",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "medical.organDonation",
+          "labelKey": "field.medical.organDonation",
+          "defaultLabel": "Organ donation wishes",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "medical.careWishes",
+          "labelKey": "field.medical.careWishes",
+          "defaultLabel": "Long-term care wishes",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "emergencyCard",
+      "labelKey": "category.emergencyCard",
+      "defaultLabel": "Emergency Card",
+      "order": 14,
+      "disclaimerKey": "disclaimer.medical",
+      "fields": [
+        {
+          "fieldKey": "emergencyCard.note",
+          "labelKey": "field.emergencyCard.note",
+          "defaultLabel": "Printable one-page summary of key medical info",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "funeral",
+      "labelKey": "category.funeral",
+      "defaultLabel": "Funeral & Burial Wishes",
+      "order": 15,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "funeral.style",
+          "labelKey": "field.funeral.style",
+          "defaultLabel": "Funeral type / scale",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "funeral.religion",
+          "labelKey": "field.funeral.religion",
+          "defaultLabel": "Religion / customs",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "funeral.notify",
+          "labelKey": "field.funeral.notify",
+          "defaultLabel": "Who to notify",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "funeral.burial",
+          "labelKey": "field.funeral.burial",
+          "defaultLabel": "Burial / cremation wishes",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "estatePlanning",
+      "labelKey": "category.estatePlanning",
+      "defaultLabel": "Estate & Will",
+      "order": 16,
+      "disclaimerKey": "disclaimer.will",
+      "fields": [
+        {
+          "fieldKey": "estatePlanning.willExists",
+          "labelKey": "field.estatePlanning.willExists",
+          "defaultLabel": "Does a will exist?",
+          "type": "choice",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "estatePlanning.willLocation",
+          "labelKey": "field.estatePlanning.willLocation",
+          "defaultLabel": "Where the will is kept",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "estatePlanning.executor",
+          "labelKey": "field.estatePlanning.executor",
+          "defaultLabel": "Executor",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "estatePlanning.beneficiaries",
+          "labelKey": "field.estatePlanning.beneficiaries",
+          "defaultLabel": "Heirs / beneficiaries",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "estatePlanning.poaLocation",
+          "labelKey": "field.estatePlanning.poaLocation",
+          "defaultLabel": "Where power of attorney documents are kept",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "estatePlanning.professionals",
+          "labelKey": "field.estatePlanning.professionals",
+          "defaultLabel": "Professionals consulted (attorney, etc.)",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "pets",
+      "labelKey": "category.pets",
+      "defaultLabel": "Pets",
+      "order": 17,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "pets.type",
+          "labelKey": "field.pets.type",
+          "defaultLabel": "Pet(s)",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "pets.caretaker",
+          "labelKey": "field.pets.caretaker",
+          "defaultLabel": "Who will care for them",
+          "type": "text",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "pets.vet",
+          "labelKey": "field.pets.vet",
+          "defaultLabel": "Veterinarian",
+          "type": "text",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "contacts",
+      "labelKey": "category.contacts",
+      "defaultLabel": "People to Notify",
+      "order": 18,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "contacts.notify",
+          "labelKey": "field.contacts.notify",
+          "defaultLabel": "People to notify",
+          "type": "multiline",
+          "defaultSensitive": false
+        },
+        {
+          "fieldKey": "contacts.doNotNotify",
+          "labelKey": "field.contacts.doNotNotify",
+          "defaultLabel": "People not to notify",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "messages",
+      "labelKey": "category.messages",
+      "defaultLabel": "Messages to Loved Ones",
+      "order": 19,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "messages.body",
+          "labelKey": "field.messages.body",
+          "defaultLabel": "A message to leave",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    },
+    {
+      "categoryKey": "documentLocations",
+      "labelKey": "category.documentLocations",
+      "defaultLabel": "Where Documents Are Kept",
+      "order": 20,
+      "disclaimerKey": null,
+      "fields": [
+        {
+          "fieldKey": "documentLocations.map",
+          "labelKey": "field.documentLocations.map",
+          "defaultLabel": "Location of key documents (deeds, policies, IDs, etc.)",
+          "type": "multiline",
+          "defaultSensitive": false
+        }
+      ]
+    }
+  ]
+}

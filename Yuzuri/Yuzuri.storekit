@@ -1,0 +1,29 @@
+{
+  "identifier" : "yuzuri-storekit",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "500",
+      "familyShareable" : false,
+      "internalID" : "yuzuri-fullunlock",
+      "localizations" : [
+        {
+          "description" : "全機能を解放する買い切り購入。",
+          "displayName" : "プレミアム解放",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.chen.yuzuri.fullunlock",
+      "referenceName" : "Full Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

@@ -1,0 +1,60 @@
+# === macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# === Xcode (user-specific) ===
+*.xcuserstate
+xcuserdata/
+*.xcodeproj/
+
+# === Swift Package Manager ===
+.build/
+.swiftpm/
+Packages/
+
+# === Build artifacts ===
+build/
+DerivedData/
+*.ipa
+*.xcarchive
+*.dSYM
+*.dSYM.zip
+
+# === Secrets / credentials ===
+*.p8
+*.p12
+*.cer
+*.mobileprovision
+AuthKey_*.p8
+.env
+.env.*
+.env.local
+secrets.json
+credentials.json
+*.private.key
+*.private.pem
+
+# === Marketing assets (live on social platforms) ===
+marketing/
+
+# === App Store Connect assets (live on ASC) ===
+AppStoreAssets/*
+!AppStoreAssets/docs/
+AppStore/
+screenshots/
+Screenshots/
+fastlane/metadata/
+fastlane/screenshots/
+fastlane/report.xml
+fastlane/test_output/
+
+# === Claude Code / 一時メモ ===
+.claude/
+PROJECT_CONTEXT.md
+
+# === Shared tooling symlink (machine-local) ===
+_tools
+
+# === Review screenshots / large generated docs ===
+docs/review/

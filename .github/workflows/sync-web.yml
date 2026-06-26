@@ -1,0 +1,46 @@
+name: Sync Web to freetokyo/web
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'web/**'
+      - '.github/workflows/sync-web.yml'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout Yuzuri
+        uses: actions/checkout@v4
+
+      - name: Checkout freetokyo/web
+        uses: actions/checkout@v4
+        with:
+          repository: freetokyo/web
+          token: ${{ secrets.WebPublicToken }}
+          ref: main
+          path: freetokyo-web
+          fetch-depth: 0
+
+      - name: Sync web/ into freetokyo-web/yuzuri/
+        run: |
+          mkdir -p freetokyo-web/yuzuri
+          rsync -av web/ freetokyo-web/yuzuri/
+
+      - name: Commit and push to freetokyo/web
+        working-directory: freetokyo-web
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add yuzuri/
+          if git diff --cached --exit-code; then
+            echo "No changes for freetokyo/web"
+          else
+            git commit -m "sync: update yuzuri web from Yuzuri@${GITHUB_SHA::7}"
+            git push origin main
+          fi

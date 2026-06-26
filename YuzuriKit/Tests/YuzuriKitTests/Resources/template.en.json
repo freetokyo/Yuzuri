@@ -1,0 +1,11 @@
+{
+  "locale": "en",
+  "templateVersion": "1.0",
+  "extends": "base",
+  "note": "English uses the base backbone as-is. Labels resolve from String Catalog (en). The previous full English template content now lives in template.base.json.",
+  "removeCategories": [],
+  "removeFields": [],
+  "addCategories": [],
+  "addFields": [],
+  "overrides": {}
+}
