@@ -1,0 +1,145 @@
+import SwiftUI
+import SwiftData
+import YuzuriKit
+
+struct ExportView: View {
+    @Environment(EntitlementStore.self) private var store
+    @Environment(TemplateStore.self) private var templateStore
+    @Environment(\.modelContext) private var ctx
+    @Query private var entries: [NoteEntry]
+
+    @State private var isGenerating = false
+    @State private var shareItem: ShareItem?
+    @State private var showPaywall = false
+    @State private var includeEmpty = false
+    @State private var ownerName = ""
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("書き出しオプション") {
+                    TextField("氏名（表紙に表示）", text: $ownerName)
+                    Toggle("空欄項目も含める", isOn: $includeEmpty)
+                }
+
+                Section {
+                    if store.isUnlocked {
+                        Button {
+                            generate(includeSensitive: false)
+                        } label: {
+                            Label("安全版を作成（秘匿なし）", systemImage: "doc.text")
+                        }
+                        .disabled(isGenerating)
+
+                        Button {
+                            Task { await generateFull() }
+                        } label: {
+                            Label("全部入り版を作成", systemImage: "doc.text.fill")
+                                .foregroundStyle(.orange)
+                        }
+                        .disabled(isGenerating)
+                    } else {
+                        Button { showPaywall = true } label: {
+                            Label("PDF書き出し（プレミアム機能）", systemImage: "lock.doc")
+                        }
+                    }
+                } footer: {
+                    Text("PDF書き出しはプレミアム機能です。買い切りで永続的にご利用いただけます。")
+                        .font(.caption)
+                }
+
+                if isGenerating {
+                    Section {
+                        HStack {
+                            ProgressView()
+                            Text("生成中…")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("書き出し")
+            .sheet(item: $shareItem) { item in
+                ShareSheet(url: item.url)
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView().environment(store)
+            }
+        }
+    }
+
+    private func generate(includeSensitive: Bool, sensitiveValues: [String: [String: String]] = [:]) {
+        isGenerating = true
+        let categories = buildCategories(sensitiveValues: sensitiveValues)
+        let opts = PDFOptions(
+            includeSensitive: includeSensitive,
+            includeEmpty: includeEmpty,
+            ownerName: ownerName,
+            locale: templateStore.locale,
+            lastUpdated: .now
+        )
+        Task {
+            let data = PDFGenerator.generate(categories: categories, options: opts)
+            let url = FileManager.default.temporaryDirectory
+                .appendingPathComponent("ユズリ_\(formattedDate()).pdf")
+            try? data.write(to: url)
+            isGenerating = false
+            shareItem = ShareItem(url: url)
+        }
+    }
+
+    private func generateFull() async {
+        let ok = await LockManager.shared.authenticate(reason: "全部入り版を書き出します")
+        guard ok else { return }
+        // 秘匿値を復号
+        var sensitiveMap: [String: [String: String]] = [:]
+        do {
+            let key = try CryptoManager.getOrCreateKey()
+            for entry in entries {
+                var vals: [String: String] = [:]
+                for blob in entry.sensitive {
+                    if let data = try? CryptoManager.decrypt(ciphertext: blob.ciphertext, nonce: blob.nonce, using: key),
+                       let str = String(data: data, encoding: .utf8) {
+                        vals[blob.fieldKey] = str
+                    }
+                }
+                sensitiveMap[entry.categoryKey] = vals
+            }
+        } catch {}
+        generate(includeSensitive: true, sensitiveValues: sensitiveMap)
+    }
+
+    private func buildCategories(sensitiveValues: [String: [String: String]]) -> [PDFCategory] {
+        let entryMap = Dictionary(uniqueKeysWithValues: entries.map { ($0.categoryKey, $0) })
+        return templateStore.categories.map { def in
+            let entry = entryMap[def.categoryKey]
+            return PDFCategory(
+                def: def,
+                structuredValues: entry?.structuredValues ?? [:],
+                freeText: entry?.freeText ?? "",
+                sensitiveValues: sensitiveValues[def.categoryKey] ?? [:]
+            )
+        }
+    }
+
+    private func formattedDate() -> String {
+        let f = DateFormatter()
+        f.dateFormat = "yyyyMMdd"
+        return f.string(from: .now)
+    }
+}
+
+// MARK: - ShareSheet
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let url: URL
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: [url], applicationActivities: nil)
+    }
+    func updateUIViewController(_ uvc: UIActivityViewController, context: Context) {}
+}
+
+struct ShareItem: Identifiable {
+    let id = UUID()
+    let url: URL
+}

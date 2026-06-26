@@ -3,14 +3,19 @@
   "nonRenewingSubscriptions" : [],
   "products" : [
     {
-      "displayPrice" : "500",
+      "displayPrice" : "1500",
       "familyShareable" : false,
       "internalID" : "yuzuri-fullunlock",
       "localizations" : [
         {
-          "description" : "全機能を解放する買い切り購入。",
-          "displayName" : "プレミアム解放",
+          "description" : "PDF書き出し・暗号化バックアップ・秘匿モードを永続的に解放する買い切り購入。",
+          "displayName" : "ユズリ プレミアム",
           "locale" : "ja_JP"
+        },
+        {
+          "description" : "Unlock PDF export, encrypted backup, and sensitive mode. One-time purchase.",
+          "displayName" : "Yuzuri Premium",
+          "locale" : "en_US"
         }
       ],
       "productID" : "com.chen.yuzuri.fullunlock",
