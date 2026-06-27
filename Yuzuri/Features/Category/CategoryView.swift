@@ -51,14 +51,14 @@ struct CategoryView: View {
             CustomItemView(category: category)
 
             // free text
-            Section(header: Text("メモ")) {
+            Section(header: Text(LocalizedStringKey("category.memo"))) {
                 TextEditor(text: freeTextBinding)
                     .frame(minHeight: 80)
             }
 
             // done toggle
             Section {
-                Toggle("記入完了", isOn: doneBinding)
+                Toggle(LocalizedStringKey("category.done"), isOn: doneBinding)
             }
         }
         .navigationTitle(category.defaultLabel)

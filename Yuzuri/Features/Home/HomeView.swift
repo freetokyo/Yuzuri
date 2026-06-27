@@ -49,7 +49,7 @@ struct HomeView: View {
                 .padding(.bottom, 32)
             }
             .background(Color(.systemGroupedBackground))
-            .navigationTitle("ユズリ")
+            .navigationTitle(LocalizedStringKey("app.name"))
             .navigationDestination(for: CategoryDef.self) { cat in
                 CategoryView(category: cat)
             }
@@ -74,7 +74,7 @@ private struct ProgressRingView: View {
             VStack(spacing: 2) {
                 Text("\(Int(rate * 100))%")
                     .font(.title2.bold())
-                Text("記入率")
+                Text(LocalizedStringKey("home.progress"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

@@ -1,11 +1,10 @@
 import SwiftUI
 
-/// 画面常置の免責バナー。
 struct DisclaimerBanner: View {
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            Image(systemName: "info.circle")   // SF Symbol（絵文字は使わない）
-            Text(Compliance.disclaimerShort)
+            Image(systemName: "info.circle")
+            Text(LocalizedStringKey("disclaimer.short"))
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }

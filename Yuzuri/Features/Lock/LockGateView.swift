@@ -12,10 +12,10 @@ struct LockGateView: View {
                     .font(.system(size: 72))
                     .foregroundStyle(Color.accentColor)
 
-                Text("ユズリ")
+                Text(LocalizedStringKey("app.name"))
                     .font(.largeTitle.bold())
 
-                Text("プライベートな情報を守るため\n認証が必要です")
+                Text(LocalizedStringKey("lock.description"))
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -23,7 +23,9 @@ struct LockGateView: View {
                 Button {
                     Task { await lockStore.unlock() }
                 } label: {
-                    Label(lockStore.isAuthenticating ? "認証中…" : "ロックを解除",
+                    Label(lockStore.isAuthenticating
+                          ? LocalizedStringKey("lock.unlocking")
+                          : LocalizedStringKey("lock.unlock"),
                           systemImage: "faceid")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 4)

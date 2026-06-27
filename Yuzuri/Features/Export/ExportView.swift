@@ -17,9 +17,9 @@ struct ExportView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("書き出しオプション") {
-                    TextField("氏名（表紙に表示）", text: $ownerName)
-                    Toggle("空欄項目も含める", isOn: $includeEmpty)
+                Section(LocalizedStringKey("export.options")) {
+                    TextField(LocalizedStringKey("export.ownerName"), text: $ownerName)
+                    Toggle(LocalizedStringKey("export.includeEmpty"), isOn: $includeEmpty)
                 }
 
                 Section {
@@ -27,24 +27,24 @@ struct ExportView: View {
                         Button {
                             generate(includeSensitive: false)
                         } label: {
-                            Label("安全版を作成（秘匿なし）", systemImage: "doc.text")
+                            Label(LocalizedStringKey("export.safe"), systemImage: "doc.text")
                         }
                         .disabled(isGenerating)
 
                         Button {
                             Task { await generateFull() }
                         } label: {
-                            Label("全部入り版を作成", systemImage: "doc.text.fill")
+                            Label(LocalizedStringKey("export.full"), systemImage: "doc.text.fill")
                                 .foregroundStyle(.orange)
                         }
                         .disabled(isGenerating)
                     } else {
                         Button { showPaywall = true } label: {
-                            Label("PDF書き出し（プレミアム機能）", systemImage: "lock.doc")
+                            Label(LocalizedStringKey("export.premiumRequired"), systemImage: "lock.doc")
                         }
                     }
                 } footer: {
-                    Text("PDF書き出しはプレミアム機能です。買い切りで永続的にご利用いただけます。")
+                    Text(LocalizedStringKey("export.premiumFooter"))
                         .font(.caption)
                 }
 
@@ -52,13 +52,13 @@ struct ExportView: View {
                     Section {
                         HStack {
                             ProgressView()
-                            Text("生成中…")
+                            Text(LocalizedStringKey("export.generating"))
                                 .foregroundStyle(.secondary)
                         }
                     }
                 }
             }
-            .navigationTitle("書き出し")
+            .navigationTitle(LocalizedStringKey("export.title"))
             .sheet(item: $shareItem) { item in
                 ShareSheet(url: item.url)
             }

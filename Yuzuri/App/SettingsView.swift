@@ -16,17 +16,17 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("購入") {
+                Section(LocalizedStringKey("settings.purchase")) {
                     if store.isUnlocked {
-                        Label("プレミアム解放済み", systemImage: "checkmark.seal")
+                        Label(LocalizedStringKey("settings.unlocked"), systemImage: "checkmark.seal")
                     } else {
-                        Button("プレミアムを解放") { showPaywall = true }
+                        Button(LocalizedStringKey("settings.unlock")) { showPaywall = true }
                     }
-                    Button("購入を復元") { Task { await store.restore() } }
+                    Button(LocalizedStringKey("settings.restore")) { Task { await store.restore() } }
                 }
 
-                Section("表示言語") {
-                    Picker("言語", selection: $selectedLocale) {
+                Section(LocalizedStringKey("settings.language")) {
+                    Picker(LocalizedStringKey("settings.language"), selection: $selectedLocale) {
                         Text("日本語").tag("ja")
                         Text("English").tag("en")
                     }
@@ -36,18 +36,18 @@ struct SettingsView: View {
                     }
                 }
 
-                Section("バックアップ") {
-                    NavigationLink("暗号化バックアップ") {
+                Section(LocalizedStringKey("settings.backup")) {
+                    NavigationLink(LocalizedStringKey("archive.title")) {
                         ArchiveView()
                             .environment(store)
                     }
                 }
 
-                Section("情報") {
-                    Link("利用規約", destination: AppLinks.terms)
-                    Link("プライバシーポリシー", destination: AppLinks.privacy)
-                    Link("サポート", destination: AppLinks.support)
-                    LabeledContent("バージョン", value: versionString)
+                Section(LocalizedStringKey("settings.info")) {
+                    Link("Terms of Use", destination: AppLinks.terms)
+                    Link("Privacy Policy", destination: AppLinks.privacy)
+                    Link("Support", destination: AppLinks.support)
+                    LabeledContent(LocalizedStringKey("settings.version"), value: versionString)
                 }
 
                 #if DEBUG
@@ -56,7 +56,7 @@ struct SettingsView: View {
                 }
                 #endif
             }
-            .navigationTitle("設定")
+            .navigationTitle(LocalizedStringKey("settings.title"))
             .sheet(isPresented: $showPaywall) {
                 PaywallView().environment(store)
             }

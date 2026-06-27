@@ -6,11 +6,11 @@ struct RootTabView: View {
     var body: some View {
         TabView {
             HomeView()
-                .tabItem { Label("ホーム", systemImage: "house") }
+                .tabItem { Label(LocalizedStringKey("home.title"), systemImage: "house") }
             ExportView()
-                .tabItem { Label("書き出し", systemImage: "square.and.arrow.up") }
+                .tabItem { Label(LocalizedStringKey("export.title"), systemImage: "square.and.arrow.up") }
             SettingsView()
-                .tabItem { Label("設定", systemImage: "gearshape") }
+                .tabItem { Label(LocalizedStringKey("settings.title"), systemImage: "gearshape") }
         }
     }
 }

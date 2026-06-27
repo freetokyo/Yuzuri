@@ -12,46 +12,43 @@ struct OnboardingView: View {
                         .foregroundStyle(Color.accentColor)
                         .accessibilityHidden(true)
 
-                    Text("ユズリへようこそ")
+                    Text(LocalizedStringKey("app.name"))
                         .font(.largeTitle.bold())
                         .multilineTextAlignment(.center)
 
                     VStack(alignment: .leading, spacing: 20) {
                         FeatureRow(icon: "iphone",
-                                   title: "完全オフライン",
-                                   description: "入力した情報はこの端末内にのみ保存されます。外部に送信されることは一切ありません。")
+                                   title: LocalizedStringKey("onboarding.offline"),
+                                   description: LocalizedStringKey("onboarding.offlineBody"))
                         FeatureRow(icon: "doc.text.fill",
-                                   title: "PDF書き出し",
-                                   description: "大切な情報をPDFとして書き出し、アプリがなくなっても紙や Files に残せます。")
+                                   title: LocalizedStringKey("onboarding.pdf"),
+                                   description: LocalizedStringKey("onboarding.pdfBody"))
                         FeatureRow(icon: "lock.fill",
-                                   title: "秘匿モード",
-                                   description: "口座番号などの機微な情報は端末内で暗号化して保存します。")
+                                   title: LocalizedStringKey("onboarding.secure"),
+                                   description: LocalizedStringKey("onboarding.secureBody"))
                         FeatureRow(icon: "person.fill.questionmark",
-                                   title: "法的助言ではありません",
-                                   description: "本アプリは情報の記録・整理ツールです。法律・税務・医療に関する専門的な助言は行いません。")
+                                   title: LocalizedStringKey("onboarding.notAdvice"),
+                                   description: LocalizedStringKey("onboarding.notAdviceBody"))
                     }
                     .padding(.horizontal)
 
-                    Text("""
-本アプリのデータは端末内のみに保存されます。
-重要なご判断は専門家にご相談ください。
-""")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
+                    Text(LocalizedStringKey("onboarding.footer"))
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
 
                     Button {
                         isPresented = false
                     } label: {
-                        Text("確認して始める")
+                        Text(LocalizedStringKey("onboarding.start"))
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 4)
                     }
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .padding(.horizontal, 40)
-                    .accessibilityHint("オンボーディングを閉じてアプリを開始します")
+                    .accessibilityHint("Closes onboarding and starts the app")
                 }
                 .padding(.vertical, 40)
             }
@@ -61,8 +58,8 @@ struct OnboardingView: View {
 
 private struct FeatureRow: View {
     let icon: String
-    let title: String
-    let description: String
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
