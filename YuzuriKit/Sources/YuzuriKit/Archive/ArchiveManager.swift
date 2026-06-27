@@ -70,10 +70,11 @@ public enum ArchiveManager {
 
     /// アーカイブ Data をパスフレーズで復号してペイロードを返す。
     public static func `import`(data: Data, passphrase: String) throws -> ArchivePayload {
-        guard data.prefix(4) == magic else { throw ArchiveError.invalidFormat }
+        guard data.count >= 5, data.prefix(4) == magic else { throw ArchiveError.invalidFormat }
         let nonceLen = Int(data[4])
         let nonceStart = 5
         let nonceEnd = nonceStart + nonceLen
+        guard nonceEnd < data.count else { throw ArchiveError.invalidFormat }
         let nonce = data[nonceStart..<nonceEnd]
         let cipher = data[nonceEnd...]
         let key = try deriveKey(from: passphrase)

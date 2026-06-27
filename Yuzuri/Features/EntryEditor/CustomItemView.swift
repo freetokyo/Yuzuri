@@ -68,7 +68,6 @@ struct AddCustomFieldSheet: View {
 
     @State private var label = ""
     @State private var type = "text"
-    @State private var sensitive = false
 
     var body: some View {
         NavigationStack {
@@ -81,20 +80,19 @@ struct AddCustomFieldSheet: View {
                         Text("テキスト").tag("text")
                         Text("複数行").tag("multiline")
                         Text("日付").tag("date")
-                        Text("秘匿").tag("sensitive")
+                        Text("秘匿（暗号化保存）").tag("sensitive")
                     }
                     .pickerStyle(.segmented)
                 }
-                Section {
-                    Toggle("秘匿項目として保存", isOn: $sensitive)
-                }
+                // 秘匿フラグは種別から自動決定（二重コントロールによる不整合を回避）
             }
             .navigationTitle("カスタム項目を追加")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("追加") {
-                        onAdd(label, sensitive ? "sensitive" : type, sensitive)
+                        let isSens = type == "sensitive"
+                        onAdd(label, type, isSens)
                         dismiss()
                     }
                     .disabled(label.isEmpty)

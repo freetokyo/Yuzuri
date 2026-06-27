@@ -37,6 +37,7 @@ struct CategoryView: View {
                         SensitiveFieldRowView(
                             field: field,
                             sensitiveStore: sensitiveStore,
+                            categoryKey: category.categoryKey,
                             entry: entry,
                             ctx: ctx
                         )
@@ -111,6 +112,7 @@ struct CategoryView: View {
 private struct SensitiveFieldRowView: View {
     let field: FieldDef
     let sensitiveStore: SensitiveFieldStore
+    let categoryKey: String
     let entry: NoteEntry?
     let ctx: ModelContext
 
@@ -159,11 +161,14 @@ private struct SensitiveFieldRowView: View {
 
     private func saveAndEnd() {
         isEditing = false
-        guard let e = entry ?? { () -> NoteEntry? in
-            let ne = NoteEntry(categoryKey: "")
+        let e: NoteEntry
+        if let existing = entry {
+            e = existing
+        } else {
+            let ne = NoteEntry(categoryKey: categoryKey)
             ctx.insert(ne)
-            return ne
-        }() else { return }
+            e = ne
+        }
         sensitiveStore.save(value: inputText, fieldKey: field.fieldKey, entry: e, ctx: ctx)
     }
 }

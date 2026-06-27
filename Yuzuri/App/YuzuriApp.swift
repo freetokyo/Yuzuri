@@ -28,7 +28,7 @@ struct YuzuriApp: App {
                     .environment(store)
                     .environment(templateStore)
                     .environment(lockStore)
-                    .task { await store.refresh() }
+                    .task { await store.load() }   // product eager 取得（Paywall 表示前に必須）
                     .task { templateStore.load() }
 
                 if !didCompleteOnboarding {

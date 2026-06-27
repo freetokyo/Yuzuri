@@ -15,49 +15,58 @@ struct ArchiveView: View {
     @State private var shareItem: ShareItem?
     @State private var alertMessage: String?
     @State private var showAlert = false
+    @State private var showPaywall = false
     @State private var importPassphrase = ""
     @State private var pendingImportURL: URL?
 
     var body: some View {
         Form {
-            Section("書き出し（暗号化バックアップ）") {
-                SecureField("パスフレーズ", text: $passphrase)
-                SecureField("確認", text: $confirmPassphrase)
-
-                Button {
-                    Task { await exportArchive() }
-                } label: {
-                    Label("暗号化アーカイブを作成", systemImage: "archivebox")
-                }
-                .disabled(passphrase.isEmpty || passphrase != confirmPassphrase || isExporting)
-            }
-
-            Section("取り込み（復元）") {
-                Button {
-                    showImportPicker = true
-                } label: {
-                    Label("アーカイブファイルを選択", systemImage: "square.and.arrow.down")
-                }
-            }
-
-            if let url = pendingImportURL {
-                Section("パスフレーズを入力して復元") {
-                    Text(url.lastPathComponent)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    SecureField("パスフレーズ", text: $importPassphrase)
-                    Button {
-                        Task { await importArchive(url: url) }
-                    } label: {
-                        Label("復元する", systemImage: "arrow.counterclockwise")
-                            .foregroundStyle(.orange)
+            if !store.isUnlocked {
+                Section {
+                    Button { showPaywall = true } label: {
+                        Label("バックアップはプレミアム機能です", systemImage: "lock.doc")
                     }
-                    .disabled(importPassphrase.isEmpty || isImporting)
+                }
+            } else {
+                Section("書き出し（暗号化バックアップ）") {
+                    SecureField("パスフレーズ", text: $passphrase)
+                    SecureField("確認", text: $confirmPassphrase)
+                    Button {
+                        Task { await exportArchive() }
+                    } label: {
+                        Label("暗号化アーカイブを作成", systemImage: "archivebox")
+                    }
+                    .disabled(passphrase.isEmpty || passphrase != confirmPassphrase || isExporting)
+                }
+
+                Section("取り込み（復元）") {
+                    Button { showImportPicker = true } label: {
+                        Label("アーカイブファイルを選択", systemImage: "square.and.arrow.down")
+                    }
+                }
+
+                if let url = pendingImportURL {
+                    Section("パスフレーズを入力して復元") {
+                        Text(url.lastPathComponent)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        SecureField("パスフレーズ", text: $importPassphrase)
+                        Button {
+                            Task { await importArchive(url: url) }
+                        } label: {
+                            Label("復元する", systemImage: "arrow.counterclockwise")
+                                .foregroundStyle(.orange)
+                        }
+                        .disabled(importPassphrase.isEmpty || isImporting)
+                    }
                 }
             }
         }
         .navigationTitle("バックアップ")
         .sheet(item: $shareItem) { item in ShareSheet(url: item.url) }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView().environment(store)
+        }
         .fileImporter(isPresented: $showImportPicker,
                       allowedContentTypes: [.data],
                       allowsMultipleSelection: false) { result in
@@ -79,7 +88,6 @@ struct ArchiveView: View {
         defer { isExporting = false }
 
         do {
-            let key = try CryptoManager.getOrCreateKey()
             let cats: [CategoryArchive] = entries.map { entry in
                 let sensitive = entry.sensitive.map {
                     SensitiveEntry(fieldKey: $0.fieldKey, ciphertext: $0.ciphertext, nonce: $0.nonce)
@@ -99,7 +107,6 @@ struct ArchiveView: View {
                 .appendingPathComponent("ユズリバックアップ_\(formattedDate()).\(ArchiveManager.fileExtension)")
             try data.write(to: url)
             shareItem = ShareItem(url: url)
-            _ = key // suppress warning
         } catch {
             alertMessage = "書き出しに失敗しました: \(error.localizedDescription)"
             showAlert = true
@@ -117,10 +124,12 @@ struct ArchiveView: View {
             defer { if accessed { url.stopAccessingSecurityScopedResource() } }
 
             let data = try Data(contentsOf: url)
+            // 復号を先に試みる — 失敗したら既存データを一切触らない
             let payload = try ArchiveManager.import(data: data, passphrase: importPassphrase)
 
-            // 既存エントリを全削除してインポート
-            for existing in entries { ctx.delete(existing) }
+            // 復号成功が確定してから既存エントリを削除し、新規エントリをビルドしてから一括保存
+            var newEntries: [NoteEntry] = []
+            var newBlobs: [SensitiveBlob] = []
 
             for cat in payload.categories {
                 let entry = NoteEntry(categoryKey: cat.categoryKey)
@@ -128,20 +137,26 @@ struct ArchiveView: View {
                 entry.freeText = cat.freeText
                 entry.userMarkedDone = cat.userMarkedDone
                 entry.updatedAt = cat.updatedAt
-                ctx.insert(entry)
+                newEntries.append(entry)
 
                 for s in cat.sensitiveEntries {
                     let blob = SensitiveBlob(fieldKey: s.fieldKey,
                                               ciphertext: s.ciphertext,
                                               nonce: s.nonce)
-                    ctx.insert(blob)
                     entry.sensitive.append(blob)
+                    newBlobs.append(blob)
                 }
             }
+
+            // すべて構築できた → 既存を削除して新規を挿入
+            for existing in entries { ctx.delete(existing) }
+            for entry in newEntries { ctx.insert(entry) }
+            for blob in newBlobs { ctx.insert(blob) }
             try ctx.save()
+
             pendingImportURL = nil
             importPassphrase = ""
-            alertMessage = "復元が完了しました（\(payload.categories.count)件）"
+            alertMessage = "復元が完了しました（\(newEntries.count)件）"
             showAlert = true
         } catch {
             alertMessage = "復元に失敗しました。パスフレーズを確認してください。"

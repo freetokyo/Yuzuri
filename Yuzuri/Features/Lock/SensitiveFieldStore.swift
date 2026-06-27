@@ -28,7 +28,9 @@ final class SensitiveFieldStore {
 
     func save(value: String, fieldKey: String, entry: NoteEntry, ctx: ModelContext) {
         guard !value.isEmpty else {
-            // 空 → 既存 blob を削除
+            // 空 → 既存 blob を明示削除（removeAll だけでは SwiftData が孤立ブロブを残す）
+            let toDelete = entry.sensitive.filter { $0.fieldKey == fieldKey }
+            toDelete.forEach { ctx.delete($0) }
             entry.sensitive.removeAll { $0.fieldKey == fieldKey }
             try? ctx.save()
             return
