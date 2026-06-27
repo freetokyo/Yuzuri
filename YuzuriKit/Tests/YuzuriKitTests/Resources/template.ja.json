@@ -2,7 +2,7 @@
   "locale": "ja",
   "templateVersion": "1.0",
   "extends": "base",
-  "note": "Japanese overlay. Adds Japan-specific items on top of base. Real labels resolve from String Catalog (ja); defaultLabel is a Japanese fallback.",
+  "note": "Japanese overlay. Adds Japan-specific items on top of base.",
   "removeCategories": [],
   "removeFields": [],
   "addCategories": [],
@@ -52,5 +52,114 @@
       }
     }
   ],
-  "overrides": {}
+  "overrides": {
+    "profile":                         { "defaultLabel": "基本情報" },
+    "lifeStory":                       { "defaultLabel": "これまでの歩み（任意）" },
+    "assets.bank":                     { "defaultLabel": "銀行・預貯金口座" },
+    "assets.securities":               { "defaultLabel": "有価証券・投資信託" },
+    "assets.insurance":                { "defaultLabel": "保険" },
+    "assets.realEstate":               { "defaultLabel": "不動産" },
+    "assets.cards":                    { "defaultLabel": "クレジットカード・電子マネー" },
+    "assets.pension":                  { "defaultLabel": "年金・退職金" },
+    "assets.liabilities":              { "defaultLabel": "負債・ローン" },
+    "assets.other":                    { "defaultLabel": "その他の資産" },
+    "recurringPayments":               { "defaultLabel": "定期支払い・サブスク" },
+    "digitalLegacy":                   { "defaultLabel": "デジタル遺産・SNS" },
+    "medical":                         { "defaultLabel": "医療・介護の希望" },
+    "emergencyCard":                   { "defaultLabel": "緊急医療カード" },
+    "funeral":                         { "defaultLabel": "葬儀・お墓の希望" },
+    "estatePlanning":                  { "defaultLabel": "相続・遺言" },
+    "pets":                            { "defaultLabel": "ペット" },
+    "contacts":                        { "defaultLabel": "連絡してほしい方" },
+    "messages":                        { "defaultLabel": "大切な方へのメッセージ" },
+    "documentLocations":               { "defaultLabel": "書類のありか" },
+
+    "profile.fullName":                { "defaultLabel": "氏名" },
+    "profile.dateOfBirth":             { "defaultLabel": "生年月日" },
+    "profile.placeOfBirth":            { "defaultLabel": "出生地" },
+    "profile.bloodType":               { "defaultLabel": "血液型" },
+    "profile.nationalIdLocation":      { "defaultLabel": "本人確認書類の保管場所" },
+    "profile.emergencyContacts":       { "defaultLabel": "緊急連絡先" },
+
+    "lifeStory.biography":             { "defaultLabel": "人生の歩み（略歴）" },
+    "lifeStory.values":                { "defaultLabel": "伝えたい価値観・信念" },
+
+    "assets.bank.institution":         { "defaultLabel": "金融機関名" },
+    "assets.bank.branch":              { "defaultLabel": "支店名" },
+    "assets.bank.accountType":         { "defaultLabel": "口座種別" },
+    "assets.bank.purpose":             { "defaultLabel": "用途・メモ" },
+    "assets.bank.accountNumber":       { "defaultLabel": "口座番号（秘匿）", "defaultSensitive": true },
+
+    "assets.securities.brokerage":     { "defaultLabel": "証券会社・運用機関" },
+    "assets.securities.account":       { "defaultLabel": "口座番号・参照情報" },
+    "assets.securities.holdings":      { "defaultLabel": "保有商品の概要" },
+
+    "assets.insurance.insurer":        { "defaultLabel": "保険会社" },
+    "assets.insurance.policyType":     { "defaultLabel": "保険の種類" },
+    "assets.insurance.policyLocation": { "defaultLabel": "保険証券の保管場所" },
+    "assets.insurance.beneficiary":    { "defaultLabel": "受取人の指定" },
+
+    "assets.realEstate.location":      { "defaultLabel": "所在地" },
+    "assets.realEstate.type":          { "defaultLabel": "種別（自宅・土地など）" },
+    "assets.realEstate.deedLocation":  { "defaultLabel": "権利証・登記書類の保管場所" },
+
+    "assets.cards.creditCards":        { "defaultLabel": "クレジット・デビットカード（発行会社・枚数）" },
+    "assets.cards.eMoney":             { "defaultLabel": "電子マネー・電子ウォレット" },
+    "assets.cards.points":             { "defaultLabel": "ポイント・マイル" },
+
+    "assets.pension.schemes":          { "defaultLabel": "公的・私的年金の種類" },
+    "assets.pension.numberLocation":   { "defaultLabel": "年金手帳・参照番号の保管場所" },
+    "assets.pension.number":           { "defaultLabel": "基礎年金番号" },
+
+    "assets.liabilities.lender":       { "defaultLabel": "金融機関・貸主" },
+    "assets.liabilities.balance":      { "defaultLabel": "残高の目安" },
+    "assets.liabilities.guarantees":   { "defaultLabel": "保証債務・連帯保証" },
+
+    "assets.other.safeDeposit":        { "defaultLabel": "貸金庫" },
+    "assets.other.crypto":             { "defaultLabel": "暗号資産（鍵の保管場所）" },
+    "assets.other.valuables":          { "defaultLabel": "貴重品・コレクション" },
+
+    "recurringPayments.subscriptions": { "defaultLabel": "解約・引き継ぎが必要なサブスク" },
+    "recurringPayments.utilities":     { "defaultLabel": "公共料金の自動引落" },
+    "recurringPayments.memberships":   { "defaultLabel": "会員・組合費" },
+
+    "digitalLegacy.accounts":          { "defaultLabel": "主なオンラインアカウント" },
+    "digitalLegacy.deviceUnlock":      { "defaultLabel": "デバイスのロック解除方法（保管場所）" },
+    "digitalLegacy.socialMedia":       { "defaultLabel": "SNS・写真の取り扱い希望" },
+    "digitalLegacy.passwordLocation":  { "defaultLabel": "パスワードの保管場所" },
+    "digitalLegacy.passwords":         { "defaultLabel": "パスワード（非推奨）", "defaultSensitive": true },
+
+    "medical.conditions":              { "defaultLabel": "既往歴・慢性疾患" },
+    "medical.medications":             { "defaultLabel": "常用薬" },
+    "medical.allergies":               { "defaultLabel": "アレルギー" },
+    "medical.primaryDoctor":           { "defaultLabel": "かかりつけ医" },
+    "medical.advanceDirective":        { "defaultLabel": "延命・尊厳死に関する希望" },
+    "medical.organDonation":           { "defaultLabel": "臓器提供の意思" },
+    "medical.careWishes":              { "defaultLabel": "介護・看取りの希望" },
+
+    "emergencyCard.note":              { "defaultLabel": "携帯用まとめ（医療情報・緊急連絡先）" },
+
+    "funeral.style":                   { "defaultLabel": "葬儀の形式・規模" },
+    "funeral.religion":                { "defaultLabel": "宗教・宗旨" },
+    "funeral.notify":                  { "defaultLabel": "訃報を知らせてほしい方" },
+    "funeral.burial":                  { "defaultLabel": "埋葬・散骨の希望" },
+
+    "estatePlanning.willExists":       { "defaultLabel": "遺言書の有無" },
+    "estatePlanning.willLocation":     { "defaultLabel": "遺言書の保管場所" },
+    "estatePlanning.executor":         { "defaultLabel": "遺言執行者" },
+    "estatePlanning.beneficiaries":    { "defaultLabel": "相続人・受取人" },
+    "estatePlanning.poaLocation":      { "defaultLabel": "委任状・成年後見関係書類の保管場所" },
+    "estatePlanning.professionals":    { "defaultLabel": "相談している専門家（弁護士・税理士等）" },
+
+    "pets.type":                       { "defaultLabel": "ペットの種類・名前" },
+    "pets.caretaker":                  { "defaultLabel": "世話をしてくれる方" },
+    "pets.vet":                        { "defaultLabel": "かかりつけの動物病院" },
+
+    "contacts.notify":                 { "defaultLabel": "連絡してほしい方（氏名・連絡先）" },
+    "contacts.doNotNotify":            { "defaultLabel": "知らせなくてよい方" },
+
+    "messages.body":                   { "defaultLabel": "大切な方へのメッセージ" },
+
+    "documentLocations.map":           { "defaultLabel": "重要書類の保管場所一覧（権利証・保険・通帳等）" }
+  }
 }

@@ -7,6 +7,7 @@ final class ReviewScreenshotUITests: XCTestCase {
     func testCaptureScreens() throws {
         let app = XCUIApplication()
         app.launchArguments += ["-FORCE_UNLOCK", "1",
+                                "-YuzuriLocale", "ja",
                                 "-AppleLanguages", "(ja)",
                                 "-AppleLocale", "ja_JP"]
         app.launch()

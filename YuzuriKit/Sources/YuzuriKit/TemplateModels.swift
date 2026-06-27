@@ -5,7 +5,7 @@ import Foundation
 public struct FieldDef: Codable, Identifiable, Hashable, Sendable {
     public let fieldKey: String
     public let labelKey: String
-    public let defaultLabel: String
+    public var defaultLabel: String
     public let type: String
     public var defaultSensitive: Bool
 
@@ -24,7 +24,7 @@ public struct FieldDef: Codable, Identifiable, Hashable, Sendable {
 public struct CategoryDef: Codable, Identifiable, Hashable, Sendable {
     public let categoryKey: String
     public let labelKey: String
-    public let defaultLabel: String
+    public var defaultLabel: String
     public var order: Int
     public var disclaimerKey: String?
     public var fields: [FieldDef]
@@ -58,6 +58,7 @@ struct OverrideOp: Codable {
     let order: Int?
     let disclaimerKey: String?
     let defaultSensitive: Bool?
+    let defaultLabel: String?
 }
 
 struct Overlay: Codable {

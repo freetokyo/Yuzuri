@@ -29,7 +29,12 @@ struct YuzuriApp: App {
                     .environment(templateStore)
                     .environment(lockStore)
                     .task { await store.load() }   // product eager 取得（Paywall 表示前に必須）
-                    .task { templateStore.load() }
+                    .task {
+                    // -YuzuriLocale ja などの起動引数でスクショ用ロケール強制指定に対応
+                    let args = CommandLine.arguments
+                    let forced = args.firstIndex(of: "-YuzuriLocale").map { args[$0 + 1] }
+                    templateStore.load(localeOverride: forced)
+                }
 
                 if !didCompleteOnboarding {
                     OnboardingView(isPresented: $didCompleteOnboarding)

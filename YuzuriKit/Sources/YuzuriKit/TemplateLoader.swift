@@ -46,10 +46,12 @@ public enum TemplateLoader {
                 if let o = ov[cats[i].categoryKey] {
                     if let v = o.order { cats[i].order = v }
                     if let v = o.disclaimerKey { cats[i].disclaimerKey = v }
+                    if let v = o.defaultLabel { cats[i].defaultLabel = v }
                 }
                 for j in cats[i].fields.indices {
                     if let o = ov[cats[i].fields[j].fieldKey] {
                         if let v = o.defaultSensitive { cats[i].fields[j].defaultSensitive = v }
+                        if let v = o.defaultLabel { cats[i].fields[j].defaultLabel = v }
                     }
                 }
             }
