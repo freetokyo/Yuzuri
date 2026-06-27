@@ -1,20 +1,35 @@
 {
   "app": {
     "bundle_id": "com.chen.yuzuri",
-    "app_id": "TODO_ADAM_ID_FROM_ASC_WEB_UI"
+    "app_id": "6784874949"
   },
   "managed_existing_localizations": [
     {
       "locale": "ja",
       "app_info": {
         "name": "ユズリ",
-        "subtitle": "TODO ≤30字",
+        "subtitle": "家族へ遺す、オフライン終活ノート",
         "privacyPolicyUrl": "https://freetokyo.github.io/web/yuzuri/privacy.html"
       },
       "version": {
-        "description": "TODO アプリ説明（≤4000字）。一般的な情報提供・学習目的である旨と、完全オフライン・データ収集なし・買い切りを明記。",
-        "keywords": "TODO,カンマ区切り,≤100字",
-        "promotionalText": "TODO ≤170字のプロモ文。",
+        "description": "大切な情報を、誰のサーバにも預けず端末の中だけで整理し、PDFとして遺せる終活ノートアプリです。\n\n【ユズリが選ばれる理由】\n・完全オフライン — 入力した情報は一切外部に送信されません。アカウント登録不要。\n・サービス終了しても安心 — PDFと暗号化バックアップがあれば情報は手元に残ります。\n・買い切り — サブスクなし。一度購入すれば永続的に使えます。\n・法的助言なし — 情報の記録・整理に特化。法律・税務・医療の専門的助言は行いません。\n\n【主な機能（無料）】\n・20カテゴリ / 72項目（日本語）の記入フォーム\n・資産・口座・医療・葬儀・家族へのメッセージ等を網羅\n・記入率ダッシュボードでどこまで書いたか一目でわかる\n・カスタム項目の追加・並べ替え\n・Face ID / Touch ID によるアプリロック\n・日本語・英語に対応（端末言語に自動連動）\n\n【プレミアム機能（買い切り ¥1,500）】\n・PDF書き出し：表紙・目次・本文・緊急医療カード・書類のありか一覧を含む完全版\n・安全版（秘匿項目を非表示）と全部入り版（再認証後に秘匿も出力）を選択可能\n・暗号化バックアップ：パスフレーズで保護した .yuzuri ファイルを書き出し・復元\n・秘匿モード：口座番号・パスワード等を端末内で AES-GCM 暗号化して保存\n\n【プライバシー】\nデータはこのiPhone/iPad内にのみ保存されます。外部サーバへの送信・データ収集はいっさいありません。プライバシーラベルは「データ未収集」です。\n\n【ご注意】\n本アプリは情報の記録・整理を目的としたツールです。エンディングノートは遺言書ではなく、法的な効力はありません。法律・税務・医療に関するご判断は専門家にご相談ください。",
+        "keywords": "終活,エンディングノート,遺言,相続,オフライン,買い切り,プライバシー,暗号化,家族,PDF",
+        "promotionalText": "家族へ遺す情報を、端末の中だけで安全に整理。完全オフライン・買い切り・PDF書き出し対応の終活ノート。",
+        "marketingUrl": "https://freetokyo.github.io/web/yuzuri/index.html",
+        "supportUrl": "https://freetokyo.github.io/web/yuzuri/support.html"
+      }
+    },
+    {
+      "locale": "en-US",
+      "app_info": {
+        "name": "Yuzuri",
+        "subtitle": "Offline End-of-Life Note",
+        "privacyPolicyUrl": "https://freetokyo.github.io/web/yuzuri/privacy.html"
+      },
+      "version": {
+        "description": "Organize your important information — assets, medical wishes, funeral preferences, messages for family — privately on your device and export it as a PDF to leave behind.\n\nYuzuri works completely offline. Nothing you type is ever sent anywhere. No account required.\n\n【Why Yuzuri】\n• Fully offline — your data stays on this device only\n• No service-shutdown risk — a PDF and encrypted backup means your information survives even if the app disappears\n• One-time purchase — no subscription, no recurring fees\n• Not legal advice — a recording tool only; consult professionals for legal, tax, or medical decisions\n\n【Free features】\n• 20 categories / 68 fields covering assets, accounts, medical, funeral, family messages, and more\n• Completion dashboard so you know what's left to fill in\n• Custom fields: add and reorder your own items\n• Face ID / Touch ID app lock\n• Japanese and English (follows device language)\n\n【Premium features — one-time ¥1,500】\n• PDF export: cover page, table of contents, body, emergency medical card, document location summary\n• Safe mode (sensitive fields hidden) or full mode (sensitive shown after re-authentication)\n• Encrypted backup: export and restore a passphrase-protected .yuzuri file\n• Sensitive mode: store passwords and account numbers encrypted with AES-GCM on device\n\n【Privacy】\nAll data is stored on this iPhone/iPad only. No data is ever transmitted or collected. Privacy label: Data Not Collected.\n\n【Disclaimer】\nYuzuri is a tool for recording and organizing personal information. An ending note is not a legally binding will and has no legal effect. Please consult a qualified professional for legal, tax, or medical matters.",
+        "keywords": "end of life,ending note,estate planning,offline,privacy,encrypted,family,PDF,one-time purchase",
+        "promotionalText": "Keep your important information private, organized, and ready to pass on. Fully offline, one-time purchase, with PDF export.",
         "marketingUrl": "https://freetokyo.github.io/web/yuzuri/index.html",
         "supportUrl": "https://freetokyo.github.io/web/yuzuri/support.html"
       }

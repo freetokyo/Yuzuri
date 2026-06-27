@@ -28,11 +28,11 @@ BASE = "https://api.appstoreconnect.apple.com/v1"
 BASE2 = "https://api.appstoreconnect.apple.com/v2"
 
 PRODUCT_ID = "com.chen.yuzuri.fullunlock"
-IAP_NAME = "ユズリ プレミアム"  # TODO
-IAP_LOC_NAME = "ユズリ プレミアム"  # TODO
-IAP_LOC_DESC = "全機能を解放する買い切り購入です。"  # TODO
+IAP_NAME = "ユズリ プレミアム"
+IAP_LOC_NAME = "ユズリ プレミアム"
+IAP_LOC_DESC = "PDF書き出し・暗号化バックアップ・秘匿モードを永続的に解放する買い切り購入です。サブスクなし。"
 TERRITORY = "JPN"
-TARGET_PRICE = "1000"  # TODO: アプリの買い切り価格(¥)に調整   # 顧客価格（¥）
+TARGET_PRICE = "1500"  # ¥1,500 確定
 
 
 def token() -> str:

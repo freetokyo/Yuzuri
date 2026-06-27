@@ -4,7 +4,12 @@ import YuzuriKit
 @Observable
 @MainActor
 final class LockGateStore {
-    var isLocked = true
+    var isLocked: Bool = {
+        #if DEBUG
+        if CommandLine.arguments.contains("-FORCE_UNLOCK") { return false }
+        #endif
+        return true
+    }()
     var isAuthenticating = false
 
     func unlock() async {
