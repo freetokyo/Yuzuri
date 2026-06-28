@@ -21,6 +21,22 @@ struct CategoryView: View {
 
     var body: some View {
         Form {
+            // カテゴリ説明ヒント（なぜ書くか — 心理的ハードル低減）
+            let hintKey = "hint.\(category.categoryKey)"
+            let hintStr = NSLocalizedString(hintKey, comment: "")
+            if hintStr != hintKey {
+                Section {
+                    HStack(alignment: .top, spacing: 8) {
+                        Image(systemName: "lightbulb.fill")
+                            .foregroundStyle(.orange)
+                            .font(.footnote)
+                        Text(hintStr)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+
             // disclaimer
             if let key = category.disclaimerKey {
                 Section {

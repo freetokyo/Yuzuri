@@ -38,7 +38,7 @@ public struct ProgressCalculator: Sendable {
 }
 
 /// SwiftData モデルを参照しない軽量スナップショット（テスト容易化）。
-public struct EntrySnapshot: Sendable {
+public struct EntrySnapshot: Sendable, Equatable {
     public var categoryKey: String
     public var structuredValues: [String: String]
     public var userMarkedDone: Bool

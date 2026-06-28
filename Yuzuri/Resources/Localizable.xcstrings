@@ -3200,6 +3200,326 @@
           }
         }
       }
+    },
+    "group.personal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About You"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あなた自身のこと"
+          }
+        }
+      }
+    },
+    "group.assets": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assets & Finance"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "財産・資産"
+          }
+        }
+      }
+    },
+    "group.wishes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medical & Funeral Wishes"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "医療・葬儀の希望"
+          }
+        }
+      }
+    },
+    "group.messages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages & Documents"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "家族へのメッセージ"
+          }
+        }
+      }
+    },
+    "group.personal.hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start here — the basics that help family identify you in an emergency."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "まずここから — 緊急時に家族があなたの情報にアクセスできるよう、基本情報を記録しましょう。"
+          }
+        }
+      }
+    },
+    "group.assets.hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record where your accounts and policies are kept — not the numbers themselves."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "口座・保険の「ありか」を記録しましょう。番号を書かなくても保管場所だけで家族が動けます。"
+          }
+        }
+      }
+    },
+    "group.wishes.hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leave guidance on medical care and funeral preferences to spare family difficult decisions."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "医療・葬儀の希望を伝えておくと、家族が辛い決断を一人で抱えずに済みます。"
+          }
+        }
+      }
+    },
+    "group.messages.hint": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Words for the people you love — and a map of where to find important documents."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大切な人へのメッセージと、重要書類のありか一覧。書いておくと家族の安心につながります。"
+          }
+        }
+      }
+    },
+    "hint.profile": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your name, birthday, and emergency contacts — the most urgent information."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "氏名・生年月日・緊急連絡先。万が一のとき最初に必要な情報です。"
+          }
+        }
+      }
+    },
+    "hint.assets.bank": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record the bank name and branch — your family can handle the rest if they know where to look."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "金融機関名と支店名だけでも記録しておけば、家族が窓口で手続きできます。"
+          }
+        }
+      }
+    },
+    "hint.medical": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allergies and medications are critical in an emergency. Fill this first."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アレルギー・常用薬は救急時に命に関わります。このカテゴリを優先してください。"
+          }
+        }
+      }
+    },
+    "hint.funeral": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No 'right' answer — just write what you'd prefer. Even a rough note helps family."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正解はありません。おおまかな希望を書いておくだけで、残された家族の負担が大きく減ります。"
+          }
+        }
+      }
+    },
+    "hint.messages": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A message doesn't have to be long. Even a few sentences mean everything."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "長文でなくていい。数行のメッセージが、家族にとって一生の宝になります。"
+          }
+        }
+      }
+    },
+    "stats.categoriesStarted": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "categories started"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カテゴリ着手"
+          }
+        }
+      }
+    },
+    "stats.fieldsCompleted": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "fields filled"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "項目記入済み"
+          }
+        }
+      }
+    },
+    "stats.suggestedNext": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggested next"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "次に書くとよい項目"
+          }
+        }
+      }
+    },
+    "stats.allDone": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All categories complete!"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全カテゴリ記入完了！"
+          }
+        }
+      }
+    },
+    "stats.greatStart": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Great start! Keep going."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "いいペースです。続けましょう。"
+          }
+        }
+      }
+    },
+    "complete.category": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Category complete"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カテゴリ完了"
+          }
+        }
+      }
+    },
+    "complete.congrats": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Well done!"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お疲れ様でした！"
+          }
+        }
+      }
     }
   },
   "version": "1.0"
