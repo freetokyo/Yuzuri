@@ -250,7 +250,7 @@ private struct SuggestedCard: View {
                 ProgressView(value: rate)
                     .tint(.orange)
             } else {
-                Text("未着手")
+                Text(LocalizedStringKey("status.empty"))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }

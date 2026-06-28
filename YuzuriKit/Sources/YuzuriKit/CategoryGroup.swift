@@ -26,14 +26,14 @@ public enum CategoryGrouping {
         CategoryGroup(
             id: "personal",
             labelKey: "group.personal",
-            defaultLabel: "あなた自身のこと",
+            defaultLabel: "About You",
             iconName: "person.fill",
             categoryKeys: ["profile", "lifeStory", "emergencyCard"]
         ),
         CategoryGroup(
             id: "assets",
             labelKey: "group.assets",
-            defaultLabel: "財産・資産",
+            defaultLabel: "Assets & Finance",
             iconName: "building.columns.fill",
             categoryKeys: [
                 "assets.bank", "assets.securities", "assets.insurance",
@@ -44,14 +44,14 @@ public enum CategoryGrouping {
         CategoryGroup(
             id: "wishes",
             labelKey: "group.wishes",
-            defaultLabel: "医療・葬儀の希望",
+            defaultLabel: "Medical & Funeral Wishes",
             iconName: "heart.fill",
             categoryKeys: ["medical", "funeral", "estatePlanning", "pets", "digitalLegacy"]
         ),
         CategoryGroup(
             id: "messages",
             labelKey: "group.messages",
-            defaultLabel: "家族へのメッセージ",
+            defaultLabel: "Messages & Documents",
             iconName: "envelope.fill",
             categoryKeys: ["contacts", "messages", "documentLocations"]
         ),
