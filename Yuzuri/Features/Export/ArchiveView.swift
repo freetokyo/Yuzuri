@@ -24,37 +24,37 @@ struct ArchiveView: View {
             if !store.isUnlocked {
                 Section {
                     Button { showPaywall = true } label: {
-                        Label("バックアップはプレミアム機能です", systemImage: "lock.doc")
+                        Label(LocalizedStringKey("archive.premiumLabel"), systemImage: "lock.doc")
                     }
                 }
             } else {
-                Section("書き出し（暗号化バックアップ）") {
-                    SecureField("パスフレーズ", text: $passphrase)
-                    SecureField("確認", text: $confirmPassphrase)
+                Section(LocalizedStringKey("archive.exportSection")) {
+                    SecureField(LocalizedStringKey("archive.passphraseField"), text: $passphrase)
+                    SecureField(LocalizedStringKey("archive.confirmField"), text: $confirmPassphrase)
                     Button {
                         Task { await exportArchive() }
                     } label: {
-                        Label("暗号化アーカイブを作成", systemImage: "archivebox")
+                        Label(LocalizedStringKey("archive.exportButton"), systemImage: "archivebox")
                     }
                     .disabled(passphrase.isEmpty || passphrase != confirmPassphrase || isExporting)
                 }
 
-                Section("取り込み（復元）") {
+                Section(LocalizedStringKey("archive.importSection")) {
                     Button { showImportPicker = true } label: {
-                        Label("アーカイブファイルを選択", systemImage: "square.and.arrow.down")
+                        Label(LocalizedStringKey("archive.selectFile"), systemImage: "square.and.arrow.down")
                     }
                 }
 
                 if let url = pendingImportURL {
-                    Section("パスフレーズを入力して復元") {
+                    Section(LocalizedStringKey("archive.restoreSection")) {
                         Text(url.lastPathComponent)
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                        SecureField("パスフレーズ", text: $importPassphrase)
+                        SecureField(LocalizedStringKey("archive.passphraseField"), text: $importPassphrase)
                         Button {
                             Task { await importArchive(url: url) }
                         } label: {
-                            Label("復元する", systemImage: "arrow.counterclockwise")
+                            Label(LocalizedStringKey("archive.restoreButton"), systemImage: "arrow.counterclockwise")
                                 .foregroundStyle(.orange)
                         }
                         .disabled(importPassphrase.isEmpty || isImporting)
@@ -62,7 +62,7 @@ struct ArchiveView: View {
                 }
             }
         }
-        .navigationTitle("バックアップ")
+        .navigationTitle(LocalizedStringKey("archive.title"))
         .sheet(item: $shareItem) { item in ShareSheet(url: item.url) }
         .sheet(isPresented: $showPaywall) {
             PaywallView().environment(store)
@@ -86,29 +86,26 @@ struct ArchiveView: View {
     private func exportArchive() async {
         isExporting = true
         defer { isExporting = false }
-
         do {
             let cats: [CategoryArchive] = entries.map { entry in
                 let sensitive = entry.sensitive.map {
                     SensitiveEntry(fieldKey: $0.fieldKey, ciphertext: $0.ciphertext, nonce: $0.nonce)
                 }
-                return CategoryArchive(
-                    categoryKey: entry.categoryKey,
-                    structuredValues: entry.structuredValues,
-                    freeText: entry.freeText,
-                    userMarkedDone: entry.userMarkedDone,
-                    updatedAt: entry.updatedAt,
-                    sensitiveEntries: sensitive
-                )
+                return CategoryArchive(categoryKey: entry.categoryKey,
+                                       structuredValues: entry.structuredValues,
+                                       freeText: entry.freeText,
+                                       userMarkedDone: entry.userMarkedDone,
+                                       updatedAt: entry.updatedAt,
+                                       sensitiveEntries: sensitive)
             }
-            let payload = ArchivePayload(categories: cats)
-            let data = try ArchiveManager.export(payload: payload, passphrase: passphrase)
+            let data = try ArchiveManager.export(payload: ArchivePayload(categories: cats),
+                                                 passphrase: passphrase)
             let url = FileManager.default.temporaryDirectory
-                .appendingPathComponent("ユズリバックアップ_\(formattedDate()).\(ArchiveManager.fileExtension)")
+                .appendingPathComponent("YuzuriBackup_\(formattedDate()).\(ArchiveManager.fileExtension)")
             try data.write(to: url)
             shareItem = ShareItem(url: url)
         } catch {
-            alertMessage = "書き出しに失敗しました: \(error.localizedDescription)"
+            alertMessage = error.localizedDescription
             showAlert = true
         }
     }
@@ -118,19 +115,13 @@ struct ArchiveView: View {
     private func importArchive(url: URL) async {
         isImporting = true
         defer { isImporting = false }
-
         do {
             let accessed = url.startAccessingSecurityScopedResource()
             defer { if accessed { url.stopAccessingSecurityScopedResource() } }
-
             let data = try Data(contentsOf: url)
-            // 復号を先に試みる — 失敗したら既存データを一切触らない
             let payload = try ArchiveManager.import(data: data, passphrase: importPassphrase)
-
-            // 復号成功が確定してから既存エントリを削除し、新規エントリをビルドしてから一括保存
             var newEntries: [NoteEntry] = []
             var newBlobs: [SensitiveBlob] = []
-
             for cat in payload.categories {
                 let entry = NoteEntry(categoryKey: cat.categoryKey)
                 entry.structuredValues = cat.structuredValues
@@ -138,35 +129,29 @@ struct ArchiveView: View {
                 entry.userMarkedDone = cat.userMarkedDone
                 entry.updatedAt = cat.updatedAt
                 newEntries.append(entry)
-
                 for s in cat.sensitiveEntries {
-                    let blob = SensitiveBlob(fieldKey: s.fieldKey,
-                                              ciphertext: s.ciphertext,
-                                              nonce: s.nonce)
+                    let blob = SensitiveBlob(fieldKey: s.fieldKey, ciphertext: s.ciphertext, nonce: s.nonce)
                     entry.sensitive.append(blob)
                     newBlobs.append(blob)
                 }
             }
-
-            // すべて構築できた → 既存を削除して新規を挿入
             for existing in entries { ctx.delete(existing) }
-            for entry in newEntries { ctx.insert(entry) }
-            for blob in newBlobs { ctx.insert(blob) }
+            for e in newEntries { ctx.insert(e) }
+            for b in newBlobs { ctx.insert(b) }
             try ctx.save()
-
             pendingImportURL = nil
             importPassphrase = ""
-            alertMessage = "復元が完了しました（\(newEntries.count)件）"
+            alertMessage = String(format: NSLocalizedString("archive.restoreComplete", comment: ""),
+                                  newEntries.count)
             showAlert = true
         } catch {
-            alertMessage = "復元に失敗しました。パスフレーズを確認してください。"
+            alertMessage = NSLocalizedString("archive.restoreFailed", comment: "")
             showAlert = true
         }
     }
 
     private func formattedDate() -> String {
-        let f = DateFormatter()
-        f.dateFormat = "yyyyMMdd"
+        let f = DateFormatter(); f.dateFormat = "yyyyMMdd"
         return f.string(from: .now)
     }
 }

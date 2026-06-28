@@ -23,7 +23,6 @@ struct FieldRowView: View {
             }
 
         case "date":
-            // DatePicker の文字列変換
             DateFieldRow(label: field.defaultLabel, value: $value)
 
         case "choice":
@@ -37,7 +36,7 @@ struct FieldRowView: View {
                 HStack {
                     Image(systemName: "lock.fill")
                         .foregroundStyle(.secondary)
-                    Text("暗号化保存（次バージョン対応）")
+                    Text(LocalizedStringKey("sensitive.encrypted"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -52,15 +51,12 @@ struct FieldRowView: View {
     }
 }
 
-// DatePicker と String を橋渡し
 private struct DateFieldRow: View {
     let label: String
     @Binding var value: String
 
     private static let formatter: DateFormatter = {
-        let f = DateFormatter()
-        f.dateStyle = .medium
-        f.timeStyle = .none
+        let f = DateFormatter(); f.dateStyle = .medium; f.timeStyle = .none
         return f
     }()
 

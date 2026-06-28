@@ -89,7 +89,8 @@ struct ExportView: View {
     }
 
     private func generateFull() async {
-        let ok = await LockManager.shared.authenticate(reason: "全部入り版を書き出します")
+        let ok = await LockManager.shared.authenticate(
+            reason: NSLocalizedString("lock.reason.fullExport", comment: ""))
         guard ok else { return }
         // 秘匿値を復号
         var sensitiveMap: [String: [String: String]] = [:]

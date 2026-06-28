@@ -14,7 +14,8 @@ final class SensitiveFieldStore {
     // MARK: - Unlock
 
     func unlockSensitive() async -> Bool {
-        let ok = await LockManager.shared.authenticate(reason: "秘匿情報を表示します")
+        let ok = await LockManager.shared.authenticate(
+            reason: NSLocalizedString("lock.reason.sensitive", comment: ""))
         if ok { isUnlocked = true }
         return ok
     }

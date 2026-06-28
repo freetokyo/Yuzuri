@@ -7,9 +7,6 @@ struct CustomItemView: View {
     @Environment(\.modelContext) private var ctx
     @Query private var allCustom: [CustomField]
 
-    @State private var newLabel = ""
-    @State private var newType = "text"
-    @State private var newSensitive = false
     @State private var showAdd = false
 
     private var customFields: [CustomField] {
@@ -18,7 +15,7 @@ struct CustomItemView: View {
     }
 
     var body: some View {
-        Section(header: Text("カスタム項目")) {
+        Section(header: Text(LocalizedStringKey("customItem.section"))) {
             ForEach(customFields) { field in
                 HStack {
                     Image(systemName: field.isSensitive ? "lock.fill" : "text.alignleft")
@@ -45,7 +42,7 @@ struct CustomItemView: View {
             Button {
                 showAdd = true
             } label: {
-                Label("カスタム項目を追加", systemImage: "plus.circle")
+                Label(LocalizedStringKey("customItem.add"), systemImage: "plus.circle")
             }
         }
         .sheet(isPresented: $showAdd) {
@@ -72,25 +69,24 @@ struct AddCustomFieldSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("項目名") {
-                    TextField("ラベル", text: $label)
+                Section(LocalizedStringKey("customItem.labelSection")) {
+                    TextField(LocalizedStringKey("customItem.labelField"), text: $label)
                 }
-                Section("種別") {
-                    Picker("種別", selection: $type) {
-                        Text("テキスト").tag("text")
-                        Text("複数行").tag("multiline")
-                        Text("日付").tag("date")
-                        Text("秘匿（暗号化保存）").tag("sensitive")
+                Section(LocalizedStringKey("customItem.typeSection")) {
+                    Picker(LocalizedStringKey("customItem.typePicker"), selection: $type) {
+                        Text(LocalizedStringKey("customItem.typeText")).tag("text")
+                        Text(LocalizedStringKey("customItem.typeMultiline")).tag("multiline")
+                        Text(LocalizedStringKey("customItem.typeDate")).tag("date")
+                        Text(LocalizedStringKey("customItem.typeSensitive")).tag("sensitive")
                     }
                     .pickerStyle(.segmented)
                 }
-                // 秘匿フラグは種別から自動決定（二重コントロールによる不整合を回避）
             }
-            .navigationTitle("カスタム項目を追加")
+            .navigationTitle(LocalizedStringKey("customItem.addTitle"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("追加") {
+                    Button(LocalizedStringKey("customItem.addButton")) {
                         let isSens = type == "sensitive"
                         onAdd(label, type, isSens)
                         dismiss()
@@ -98,7 +94,7 @@ struct AddCustomFieldSheet: View {
                     .disabled(label.isEmpty)
                 }
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("キャンセル") { dismiss() }
+                    Button(LocalizedStringKey("common.cancel")) { dismiss() }
                 }
             }
         }

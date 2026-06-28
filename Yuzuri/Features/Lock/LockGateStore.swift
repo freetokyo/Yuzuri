@@ -16,7 +16,8 @@ final class LockGateStore {
         guard isLocked else { return }
         isAuthenticating = true
         defer { isAuthenticating = false }
-        let ok = await LockManager.shared.authenticate(reason: "ユズリを開く")
+        let ok = await LockManager.shared.authenticate(
+            reason: NSLocalizedString("lock.reason.app", comment: ""))
         if ok { isLocked = false }
     }
 

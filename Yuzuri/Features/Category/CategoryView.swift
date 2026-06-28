@@ -127,14 +127,14 @@ private struct SensitiveFieldRowView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     Spacer()
-                    Button("ロック") { sensitiveStore.lockSensitive() }
+                    Button(LocalizedStringKey("sensitive.lockButton")) { sensitiveStore.lockSensitive() }
                         .font(.caption)
                 }
                 if isEditing {
-                    TextField("値を入力", text: $inputText)
+                    TextField(LocalizedStringKey("sensitive.enterValue"), text: $inputText)
                         .onSubmit { saveAndEnd() }
                 } else {
-                    Text(sensitiveStore.decrypted[field.fieldKey] ?? "(未入力)")
+                    Text(sensitiveStore.decrypted[field.fieldKey] ?? "")
                         .foregroundStyle(sensitiveStore.decrypted[field.fieldKey] == nil ? .secondary : .primary)
                         .onTapGesture {
                             inputText = sensitiveStore.decrypted[field.fieldKey] ?? ""
@@ -152,7 +152,7 @@ private struct SensitiveFieldRowView: View {
                 Label(field.defaultLabel, systemImage: "lock.fill")
                     .foregroundStyle(.primary)
                 Spacer()
-                Text("タップして解除")
+                Text(LocalizedStringKey("sensitive.tapToUnlock"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

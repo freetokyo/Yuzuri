@@ -44,9 +44,9 @@ struct SettingsView: View {
                 }
 
                 Section(LocalizedStringKey("settings.info")) {
-                    Link("Terms of Use", destination: AppLinks.terms)
-                    Link("Privacy Policy", destination: AppLinks.privacy)
-                    Link("Support", destination: AppLinks.support)
+                    Link(LocalizedStringKey("link.terms"),   destination: AppLinks.terms)
+                    Link(LocalizedStringKey("link.privacy"), destination: AppLinks.privacy)
+                    Link(LocalizedStringKey("link.support"), destination: AppLinks.support)
                     LabeledContent(LocalizedStringKey("settings.version"), value: versionString)
                 }
 

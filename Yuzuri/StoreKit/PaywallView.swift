@@ -9,9 +9,9 @@ struct PaywallView: View {
             Image(systemName: "sparkles")
                 .font(.system(size: 48))
                 .foregroundStyle(.tint)
-            Text("プレミアムを解放")
+            Text(LocalizedStringKey("paywall.title"))
                 .font(.title.bold())
-            Text("買い切り（サブスクなし）。一度購入すればずっと使えます。")
+            Text(LocalizedStringKey("paywall.subtitle"))
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -19,23 +19,29 @@ struct PaywallView: View {
             Button {
                 Task { await store.purchase() }
             } label: {
-                Text(store.product.map { "\($0.displayPrice) で解放" } ?? "解放")
-                    .frame(maxWidth: .infinity)
+                if let product = store.product {
+                    Text(String(format: NSLocalizedString("paywall.unlockButton", comment: ""),
+                                product.displayPrice))
+                        .frame(maxWidth: .infinity)
+                } else {
+                    Text(LocalizedStringKey("paywall.unlockFallback"))
+                        .frame(maxWidth: .infinity)
+                }
             }
             .buttonStyle(.borderedProminent)
-            .disabled(store.product == nil)   // 商品未取得時は購入不可
+            .disabled(store.product == nil)
 
-            Button("購入を復元") { Task { await store.restore() } }
+            Button(LocalizedStringKey("paywall.restore")) { Task { await store.restore() } }
 
             // 利用規約 / プライバシーのリンクは必須（審査 3.1.2 対策）
             HStack(spacing: 16) {
-                Link("利用規約", destination: AppLinks.terms)
-                Link("プライバシー", destination: AppLinks.privacy)
+                Link(LocalizedStringKey("paywall.terms"),   destination: AppLinks.terms)
+                Link(LocalizedStringKey("paywall.privacy"), destination: AppLinks.privacy)
             }
             .font(.footnote)
         }
         .padding()
-        .task { await store.load() }          // 商品を eager 取得
+        .task { await store.load() }
         .onChange(of: store.isUnlocked) { _, unlocked in
             if unlocked { dismiss() }
         }
