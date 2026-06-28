@@ -3622,7 +3622,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "One-time purchase"
+            "value": "One-time"
           }
         },
         "ja": {
@@ -3670,13 +3670,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "All 20 categories & 68+ fields"
+            "value": "20 categories / 68+ fields"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "全20カテゴリ / 72項目の記入"
+            "value": "20カテゴリ / 72項目"
           }
         }
       }
@@ -3686,7 +3686,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Custom fields (add & reorder)"
+            "value": "Custom fields: add & reorder"
           }
         },
         "ja": {
@@ -3734,13 +3734,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "PDF export (cover, TOC, body, emergency card)"
+            "value": "PDF Export"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "PDF書き出し（表紙・目次・本文・緊急医療カード）"
+            "value": "PDF書き出し"
           }
         }
       }
@@ -3750,13 +3750,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Safe mode — sensitive fields hidden by default"
+            "value": "Safe mode"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "安全版（秘匿項目を非表示）"
+            "value": "安全版"
           }
         }
       }
@@ -3766,13 +3766,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Full mode — all fields with re-authentication"
+            "value": "Full mode"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "全部入り版（再認証後に秘匿も出力）"
+            "value": "全部入り版"
           }
         }
       }
@@ -3782,13 +3782,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Encrypted backup & restore (.yuzuri file)"
+            "value": "Encrypted backup"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "暗号化バックアップ・復元（.yuzuriファイル）"
+            "value": "暗号化バックアップ"
           }
         }
       }
@@ -3798,13 +3798,237 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sensitive mode — passwords encrypted on-device"
+            "value": "Sensitive mode"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "秘匿モード（端末内AES-GCM暗号化保存）"
+            "value": "秘匿モード"
+          }
+        }
+      }
+    },
+    "paywall.premium.1.sub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cover · TOC · body · emergency card"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表紙・目次・本文・緊急医療カード"
+          }
+        }
+      }
+    },
+    "paywall.premium.2.sub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sensitive fields hidden by default"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "秘匿項目を非表示で出力"
+          }
+        }
+      }
+    },
+    "paywall.premium.3.sub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All fields after re-authentication"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再認証後に秘匿も含めて出力"
+          }
+        }
+      }
+    },
+    "paywall.premium.4.sub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export / restore as .yuzuri file"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": ".yuzuriファイルで書き出し・復元"
+          }
+        }
+      }
+    },
+    "paywall.premium.5.sub": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AES-GCM encrypted on-device"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "端末内AES-GCM暗号化保存"
+          }
+        }
+      }
+    },
+    "paywall.premium.1.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "doc.text.fill"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "doc.text.fill"
+          }
+        }
+      }
+    },
+    "paywall.premium.2.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eye.slash.fill"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eye.slash.fill"
+          }
+        }
+      }
+    },
+    "paywall.premium.3.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "doc.text.magnifyingglass"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "doc.text.magnifyingglass"
+          }
+        }
+      }
+    },
+    "paywall.premium.4.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "archivebox.fill"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "archivebox.fill"
+          }
+        }
+      }
+    },
+    "paywall.premium.5.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lock.fill"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "lock.fill"
+          }
+        }
+      }
+    },
+    "paywall.free.1.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "list.bullet.clipboard"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "list.bullet.clipboard"
+          }
+        }
+      }
+    },
+    "paywall.free.2.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "plus.square.on.square"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "plus.square.on.square"
+          }
+        }
+      }
+    },
+    "paywall.free.3.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "faceid"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "faceid"
+          }
+        }
+      }
+    },
+    "paywall.free.4.icon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "globe"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "globe"
           }
         }
       }

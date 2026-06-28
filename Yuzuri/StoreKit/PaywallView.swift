@@ -4,11 +4,15 @@ struct PaywallView: View {
     @Environment(EntitlementStore.self) private var store
     @Environment(\.dismiss) private var dismiss
 
+    private let freeKeys   = ["paywall.free.1",    "paywall.free.2",    "paywall.free.3",    "paywall.free.4"]
+    private let premiumKeys = ["paywall.premium.1", "paywall.premium.2", "paywall.premium.3",
+                               "paywall.premium.4", "paywall.premium.5"]
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
 
-                // ── ヘッダー ────────────────────────────────────
+                // ── ヘッダー ──────────────────────────────────────
                 VStack(spacing: 8) {
                     Image(systemName: "leaf.fill")
                         .font(.system(size: 40))
@@ -26,59 +30,38 @@ struct PaywallView: View {
                 .padding(.horizontal)
                 .padding(.bottom, 24)
 
-                // ── 比較テーブル ─────────────────────────────────
+                // ── 比較テーブル ──────────────────────────────────
                 VStack(spacing: 0) {
 
                     // 列ヘッダー
-                    HStack {
+                    HStack(spacing: 0) {
                         Spacer()
                         PlanHeader(
                             title: LocalizedStringKey("paywall.free"),
-                            tag: LocalizedStringKey("paywall.freeTag"),
+                            tag:   LocalizedStringKey("paywall.freeTag"),
                             isFree: true
                         )
                         PlanHeader(
                             title: LocalizedStringKey("paywall.premium"),
-                            tag: LocalizedStringKey("paywall.premiumTag"),
+                            tag:   LocalizedStringKey("paywall.premiumTag"),
                             isFree: false
                         )
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal, 16)
                     .padding(.bottom, 8)
 
                     Divider()
 
-                    // 無料機能
-                    SectionHeader(title: LocalizedStringKey("paywall.free"))
-
-                    ForEach([
-                        "paywall.free.1",
-                        "paywall.free.2",
-                        "paywall.free.3",
-                        "paywall.free.4",
-                    ], id: \.self) { key in
-                        FeatureRow(
-                            label: LocalizedStringKey(key),
-                            freeHas: true,
-                            premiumHas: true
-                        )
+                    // 無料機能セクション
+                    SectionLabel(title: LocalizedStringKey("paywall.free"))
+                    ForEach(freeKeys, id: \.self) { key in
+                        FeatureRow(baseKey: key, freeHas: true, premiumHas: true)
                     }
 
-                    // プレミアム機能
-                    SectionHeader(title: LocalizedStringKey("paywall.premium"))
-
-                    ForEach([
-                        "paywall.premium.1",
-                        "paywall.premium.2",
-                        "paywall.premium.3",
-                        "paywall.premium.4",
-                        "paywall.premium.5",
-                    ], id: \.self) { key in
-                        FeatureRow(
-                            label: LocalizedStringKey(key),
-                            freeHas: false,
-                            premiumHas: true
-                        )
+                    // プレミアム機能セクション
+                    SectionLabel(title: LocalizedStringKey("paywall.premium"))
+                    ForEach(premiumKeys, id: \.self) { key in
+                        FeatureRow(baseKey: key, freeHas: false, premiumHas: true)
                     }
                 }
                 .background(.background, in: RoundedRectangle(cornerRadius: 14))
@@ -91,8 +74,10 @@ struct PaywallView: View {
                     } label: {
                         Group {
                             if let product = store.product {
-                                Text(String(format: NSLocalizedString("paywall.unlockButton", comment: ""),
-                                            product.displayPrice))
+                                Text(String(
+                                    format: NSLocalizedString("paywall.unlockButton", comment: ""),
+                                    product.displayPrice
+                                ))
                             } else {
                                 Text(LocalizedStringKey("paywall.unlockFallback"))
                             }
@@ -131,7 +116,7 @@ struct PaywallView: View {
     }
 }
 
-// MARK: - Sub-views
+// MARK: - PlanHeader
 
 private struct PlanHeader: View {
     let title: LocalizedStringKey
@@ -153,11 +138,13 @@ private struct PlanHeader: View {
                 )
                 .foregroundStyle(isFree ? .secondary : Color.accentColor)
         }
-        .frame(width: 110)
+        .frame(width: 88)
     }
 }
 
-private struct SectionHeader: View {
+// MARK: - SectionLabel
+
+private struct SectionLabel: View {
     let title: LocalizedStringKey
 
     var body: some View {
@@ -174,25 +161,61 @@ private struct SectionHeader: View {
     }
 }
 
+// MARK: - FeatureRow  (icon + title + subtitle | ✓ | ✓)
+
 private struct FeatureRow: View {
-    let label: LocalizedStringKey
+    let baseKey: String    // e.g. "paywall.free.1" or "paywall.premium.1"
     let freeHas: Bool
     let premiumHas: Bool
 
+    private var iconName: String {
+        NSLocalizedString("\(baseKey).icon", comment: "")
+    }
+    private var subtitle: String {
+        let s = NSLocalizedString("\(baseKey).sub", comment: "")
+        return s == "\(baseKey).sub" ? "" : s   // キーが未登録なら空
+    }
+
     var body: some View {
-        HStack(alignment: .top, spacing: 0) {
-            Text(label)
-                .font(.subheadline)
+        VStack(spacing: 0) {
+            HStack(alignment: .center, spacing: 0) {
+                // アイコン
+                Image(systemName: iconName.isEmpty ? "checkmark" : iconName)
+                    .font(.callout)
+                    .foregroundStyle(freeHas ? .green : Color.accentColor)
+                    .frame(width: 36)
+
+                // タイトル + サブタイトル
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(LocalizedStringKey(baseKey))
+                        .font(.subheadline.weight(.medium))
+                        .lineLimit(subtitle.isEmpty ? 2 : 1)  // サブタイトルなし=2行OK
+                        .fixedSize(horizontal: false, vertical: true)
+                    if !subtitle.isEmpty {
+                        Text(subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.85)
+                    }
+                }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 16)
                 .padding(.vertical, 12)
 
-            CheckCell(has: freeHas, isPremium: false)
-            CheckCell(has: premiumHas, isPremium: true)
+                // 無料列チェック
+                CheckCell(has: freeHas,    isPremium: false)
+                // プレミアム列チェック
+                CheckCell(has: premiumHas, isPremium: true)
+            }
+            .padding(.leading, 4)
+            .padding(.trailing, 0)
+
+            Divider().padding(.leading, 36)
         }
-        Divider().padding(.leading, 16)
     }
 }
+
+// MARK: - CheckCell
 
 private struct CheckCell: View {
     let has: Bool
@@ -205,12 +228,11 @@ private struct CheckCell: View {
                     .foregroundStyle(isPremium ? Color.accentColor : .green)
             } else {
                 Image(systemName: "minus")
-                    .foregroundStyle(.quaternary)
+                    .foregroundStyle(Color(.quaternaryLabel))
             }
         }
         .font(.body)
-        .frame(width: 110)
-        .padding(.vertical, 12)
+        .frame(width: 88)
     }
 }
 
