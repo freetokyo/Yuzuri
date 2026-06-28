@@ -80,8 +80,9 @@ struct ExportView: View {
         )
         Task {
             let data = PDFGenerator.generate(categories: categories, options: opts)
+            let prefix = NSLocalizedString("app.name", comment: "")
             let url = FileManager.default.temporaryDirectory
-                .appendingPathComponent("ユズリ_\(formattedDate()).pdf")
+                .appendingPathComponent("\(prefix)_\(formattedDate()).pdf")
             try? data.write(to: url)
             isGenerating = false
             shareItem = ShareItem(url: url)
