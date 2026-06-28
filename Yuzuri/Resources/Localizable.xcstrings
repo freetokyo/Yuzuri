@@ -3568,6 +3568,246 @@
           }
         }
       }
+    },
+    "paywall.free": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無料"
+          }
+        }
+      }
+    },
+    "paywall.premium": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プレミアム"
+          }
+        }
+      }
+    },
+    "paywall.freeTag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current plan"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のプラン"
+          }
+        }
+      }
+    },
+    "paywall.premiumTag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One-time purchase"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "買い切り"
+          }
+        }
+      }
+    },
+    "paywall.noSubscription": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No subscription. Pay once, keep forever."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サブスクなし。一度買えばずっと使えます。"
+          }
+        }
+      }
+    },
+    "paywall.compareTitle": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What's included"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "含まれる機能"
+          }
+        }
+      }
+    },
+    "paywall.free.1": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All 20 categories & 68+ fields"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全20カテゴリ / 72項目の記入"
+          }
+        }
+      }
+    },
+    "paywall.free.2": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom fields (add & reorder)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カスタム項目の追加・並べ替え"
+          }
+        }
+      }
+    },
+    "paywall.free.3": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID / Touch ID lock"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face ID / Touch ID ロック"
+          }
+        }
+      }
+    },
+    "paywall.free.4": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Japanese & English"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日本語・英語対応"
+          }
+        }
+      }
+    },
+    "paywall.premium.1": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF export (cover, TOC, body, emergency card)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF書き出し（表紙・目次・本文・緊急医療カード）"
+          }
+        }
+      }
+    },
+    "paywall.premium.2": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safe mode — sensitive fields hidden by default"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安全版（秘匿項目を非表示）"
+          }
+        }
+      }
+    },
+    "paywall.premium.3": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full mode — all fields with re-authentication"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部入り版（再認証後に秘匿も出力）"
+          }
+        }
+      }
+    },
+    "paywall.premium.4": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encrypted backup & restore (.yuzuri file)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暗号化バックアップ・復元（.yuzuriファイル）"
+          }
+        }
+      }
+    },
+    "paywall.premium.5": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sensitive mode — passwords encrypted on-device"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "秘匿モード（端末内AES-GCM暗号化保存）"
+          }
+        }
+      }
     }
   },
   "version": "1.0"

@@ -5,8 +5,10 @@ import YuzuriKit
 struct CategoryView: View {
     let category: CategoryDef
     @Environment(\.modelContext) private var ctx
+    @Environment(EntitlementStore.self) private var store
     @Query private var allEntries: [NoteEntry]
     @State private var sensitiveStore = SensitiveFieldStore()
+    @State private var showPaywall = false
 
     private var entry: NoteEntry? {
         allEntries.first { $0.categoryKey == category.categoryKey }
@@ -50,13 +52,32 @@ struct CategoryView: View {
             Section {
                 ForEach(category.fields) { field in
                     if field.type == "sensitive" {
-                        SensitiveFieldRowView(
-                            field: field,
-                            sensitiveStore: sensitiveStore,
-                            categoryKey: category.categoryKey,
-                            entry: entry,
-                            ctx: ctx
-                        )
+                        if store.isUnlocked {
+                            SensitiveFieldRowView(
+                                field: field,
+                                sensitiveStore: sensitiveStore,
+                                categoryKey: category.categoryKey,
+                                entry: entry,
+                                ctx: ctx
+                            )
+                        } else {
+                            // プレミアム未購入 → Paywall に誘導
+                            Button { showPaywall = true } label: {
+                                HStack {
+                                    Image(systemName: "lock.fill")
+                                        .foregroundStyle(Color.accentColor)
+                                    Text(field.defaultLabel)
+                                        .foregroundStyle(.primary)
+                                    Spacer()
+                                    Text(LocalizedStringKey("paywall.premium"))
+                                        .font(.caption2.bold())
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 3)
+                                        .background(Color.accentColor.opacity(0.12), in: Capsule())
+                                        .foregroundStyle(Color.accentColor)
+                                }
+                            }
+                        }
                     } else {
                         FieldRowView(field: field, value: binding(for: field))
                     }
@@ -80,6 +101,9 @@ struct CategoryView: View {
         .navigationTitle(category.defaultLabel)
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear { sensitiveStore.lockSensitive() }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView().environment(store)
+        }
     }
 
     private func binding(for field: FieldDef) -> Binding<String> {
