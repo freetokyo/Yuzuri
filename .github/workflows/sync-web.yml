@@ -1,46 +1,31 @@
-name: Sync Web to freetokyo/web
-
+name: sync-web
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
-      - 'web/**'
-      - '.github/workflows/sync-web.yml'
-
+      - "web/**"
+  workflow_dispatch:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - name: Checkout Yuzuri
+      - name: Checkout this app
         uses: actions/checkout@v4
-
-      - name: Checkout freetokyo/web
+      - name: Checkout public web hub
         uses: actions/checkout@v4
         with:
           repository: freetokyo/web
-          token: ${{ secrets.WebPublicToken }}
-          ref: main
-          path: freetokyo-web
-          fetch-depth: 0
-
-      - name: Sync web/ into freetokyo-web/yuzuri/
+          token: ${{ secrets.WEB_SYNC_TOKEN }}
+          path: web-hub
+      - name: Copy app web into hub
         run: |
-          mkdir -p freetokyo-web/yuzuri
-          rsync -av web/ freetokyo-web/yuzuri/
-
-      - name: Commit and push to freetokyo/web
-        working-directory: freetokyo-web
+          mkdir -p web-hub/yuzuri
+          rsync -av --delete web/ web-hub/yuzuri/
+      - name: Commit & push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add yuzuri/
-          if git diff --cached --exit-code; then
-            echo "No changes for freetokyo/web"
-          else
-            git commit -m "sync: update yuzuri web from Yuzuri@${GITHUB_SHA::7}"
-            git push origin main
-          fi
+          cd web-hub
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "sync: yuzuri web"
+          git push
