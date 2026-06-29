@@ -37,7 +37,7 @@ struct YuzuriApp: App {
                 }
 
                 if !didCompleteOnboarding {
-                    OnboardingView(isPresented: $didCompleteOnboarding)
+                    OnboardingView(didComplete: $didCompleteOnboarding)
                         .transition(.opacity)
                 } else if lockStore.isLocked {
                     LockGateView(lockStore: lockStore)

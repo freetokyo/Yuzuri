@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @Binding var isPresented: Bool
+    @Binding var didComplete: Bool
 
     var body: some View {
         NavigationStack {
@@ -39,7 +39,7 @@ struct OnboardingView: View {
                         .padding(.horizontal)
 
                     Button {
-                        isPresented = false
+                        didComplete = true
                     } label: {
                         Text(LocalizedStringKey("onboarding.start"))
                             .frame(maxWidth: .infinity)
