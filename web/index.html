@@ -1,18 +1,578 @@
 <!DOCTYPE html>
+<!-- ============================================================
+  Yuzuri — index.html
+  SEO / SNS / ASO
+============================================================ -->
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ユズリ</title>
-  <meta name="description" content="ユズリ — 完全オフライン・データ収集なし・買い切りの iOS アプリ。終活ノート。" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index,follow" name="robots"/>
+<title>Yuzuri | 完全オフライン・買い切りの終活ノート for iPhone</title>
+<meta content="Yuzuriは、シンプルで安心の終活ノート。アカウント不要・データ収集なし・完全にオフラインで、終活に必要な情報を一冊のノートに残せます。買い切り。" name="description"/>
+<meta content="終活,終活ノート,エンディングノート,遺産,相続,アプリ,iPhone,オフライン,買い切り,個人情報保護,プライバシー,家族,引き継ぎ" name="keywords"/>
+<link href="https://freetokyo.github.io/web/yuzuri/" rel="canonical"/>
+<link href="https://freetokyo.github.io/web/yuzuri/" hreflang="ja" rel="alternate"/>
+<link href="https://freetokyo.github.io/web/yuzuri/" hreflang="x-default" rel="alternate"/>
+<!-- パフォーマンス: App Store への遷移を早める -->
+<link href="https://apps.apple.com" rel="preconnect"/>
+<link href="https://apps.apple.com" rel="dns-prefetch"/>
+<meta content="app-id=6764244913, app-argument=https://freetokyo.github.io/web/yuzuri/" name="apple-itunes-app"/>
+<meta content="website" property="og:type"/>
+<meta content="Yuzuri" property="og:site_name"/>
+<meta content="Yuzuri | 完全オフライン・買い切りの終活ノート for iPhone" property="og:title"/>
+<meta content="アカウント不要・データ収集なし・完全オンデバイス。終活に必要な情報をシンプルに記録できるiPhone向けエンディングノートアプリ。" property="og:description"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Yuzuri — iPhone 向け完全オフライン終活ノート" property="og:image:alt"/>
+<meta content="https://freetokyo.github.io/web/yuzuri/" property="og:url"/>
+<meta content="ja_JP" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Yuzuri | 完全オフライン・買い切りの終活ノート for iPhone" name="twitter:title"/>
+<meta content="アカウント不要・データ収集なし・完全オンデバイス。終活に必要な情報をシンプルに記録できるiPhone向けエンディングノートアプリ。" name="twitter:description"/>
+<meta content="Yuzuri — iPhone endgame notebook" name="twitter:image:alt"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Yuzuri",
+  "alternateName": [
+    "ユズリ",
+    "Yuzuri: Endgame Notebook"
+  ],
+  "operatingSystem": "iOS 17.0 以降",
+  "applicationCategory": "Productivity",
+  "applicationSubCategory": "LifeManagement",
+  "description": "Yuzuriは、終活に必要な情報を簡潔に記録できるiPhone向けエンディングノート。オンデバイス保存で、あなたのデータはあなたのiPhoneにだけ存在します。",
+  "inLanguage": ["ja"],
+  "url": "https://freetokyo.github.io/web/yuzuri/",
+  "downloadUrl": "https://apps.apple.com/app/id6764244913",
+  "installUrl": "https://apps.apple.com/app/id6764244913",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "freetokyo",
+    "url": "https://freetokyo.github.io/web/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "freetokyo",
+    "url": "https://freetokyo.github.io/web/"
+  },
+  "featureList": [
+    "終活に必要な情報を一元管理",
+    "アカウント不要・データ収集なし",
+    "完全オンデバイス保存",
+    "親しい人への引き継ぎサポート",
+    "シンプルで使いやすいUI",
+    "買い切り（サブスクリプション不要）"
+  ],
+  "screenshot": [],
+  "availableOnDevice": "iPhone",
+  "datePublished": "2026-06-27",
+  "contentRating": "4+",
+  "fileSize": "12 MB"
+}
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://freetokyo.github.io/web/yuzuri/",
+    "name": "Yuzuri",
+    "inLanguage": ["ja"]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "freetokyo",
+        "item": "https://freetokyo.github.io/web/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Yuzuri",
+        "item": "https://freetokyo.github.io/web/yuzuri/"
+      }
+    ]
+  }
+</script>
+<style>
+    * { box-sizing: border-box; }
+    :root {
+      --ink: #241717;
+      --accent: #6b5b95;
+      --accent-2: #9b8bb1;
+      --muted: #7a6b7a;
+      --card: #ffffff;
+      --line: #e8dce8;
+      --bg: #faf8fb;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      color: #2b1d1a;
+      background: var(--bg);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: rgba(36, 23, 23, 0.94);
+      backdrop-filter: blur(12px);
+    }
+    .logo {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 12px; }
+    .nav-links a {
+      color: #dbe7f3;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 72px 20px 56px;
+      background:
+        radial-gradient(circle at top right, rgba(107,91,149,0.25), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(91,40,90,0.20), transparent 26%),
+        linear-gradient(145deg, #241717 0%, #4a2c4a 46%, #6b3d5b 100%);
+      color: #fff;
+    }
+    .hero-inner, .section, footer {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+    .hero p {
+      max-width: 780px;
+      margin: 0 0 22px;
+      color: #e6edf5;
+      font-size: 18px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .meta-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      color: #f7fafc;
+      font-size: 13px;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+      align-items: center;
+    }
+    .appstore-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .appstore-badge .badge-sub {
+      font-size: 10px;
+      font-weight: 500;
+      opacity: 0.6;
+      display: block;
+      line-height: 1;
+    }
+    .appstore-badge .badge-main {
+      font-size: 16px;
+      font-weight: 800;
+      display: block;
+      line-height: 1.3;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.secondary {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .section { padding: 28px 20px 0; }
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 27px;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .section-lead {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .section-note, p.note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(16, 32, 51, 0.05);
+    }
+    .card h2, .card h3 {
+      margin-top: 0;
+      color: var(--ink);
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(16, 32, 51, 0.05);
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th {
+      background: #f5f1f8;
+      color: var(--ink);
+      font-size: 13px;
+    }
+    tr:last-child td { border-bottom: none; }
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 30px rgba(16, 32, 51, 0.04);
+    }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .share-section {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding: 24px 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+    .share-section h2 { margin: 0 0 14px; font-size: 18px; color: var(--ink); }
+    .share-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .share-btn.x { background: #000; }
+    .share-btn.line { background: #ff6a2a; }
+    .share-btn.copy {
+      background: var(--muted);
+      cursor: pointer;
+      border: none;
+    }
+    .hashtags { margin-top: 10px; font-size: 13px; color: var(--muted); }
+    footer {
+      margin-top: 48px;
+      padding: 24px 20px 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer a { color: #6b5b95; text-decoration: none; }
+    .ftfacts{max-width:760px;margin:32px auto;padding:0 16px}
+    .ftfacts h2{font-size:1.3rem;margin:0 0 14px;border:0;padding:0}
+    .ftfacts table{width:100%;border-collapse:collapse;font-size:.95rem}
+    .ftfacts th,.ftfacts td{text-align:left;padding:9px 12px;border-bottom:1px solid rgba(128,128,128,.25);vertical-align:top}
+    .ftfacts th{white-space:nowrap;width:9em;opacity:.7;font-weight:600}
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      h1 { font-size: 36px; }
+      .hero p { font-size: 16px; }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Yuzuri</h1>
-    <p>ユズリ</p>
-    <p>完全オフライン・データ収集なし・買い切り。</p>
-    <p><a href="support.html">サポート</a> ・ <a href="terms.html">利用規約</a> ・ <a href="privacy.html">プライバシー</a></p>
-    <p>※ Web の機能訴求は実際にアプリ UI で操作可能なものだけを書く（過大記載は審査 2.3.1 リスク）。</p>
-  </main>
+<nav>
+<a class="logo" href="index.html">YUZURI</a>
+<div class="nav-links">
+<a href="support.html">サポート</a>
+<a href="privacy.html">プライバシー</a>
+<a href="terms.html">利用規約</a>
+</div>
+</nav>
+<header class="hero">
+<div class="hero-inner">
+<div class="eyebrow">終活を、もっとシンプルに</div>
+<h1>
+親しい人への<br/>引き継ぎを残す。
+</h1>
+<p>
+Yuzuriは、シンプルで安心の終活ノート。アカウント不要・データ収集なし・完全にオフラインで、終活に必要な情報をひとつのアプリに残せます。
+</p>
+<p style="margin:0 0 4px;color:#c8e6ff;font-size:15px;font-weight:600;">買い切り — サブスクリプション不要</p>
+<div class="cta-row">
+<a class="appstore-badge" href="https://apps.apple.com/app/id6764244913" rel="noopener">
+<span>
+<span class="badge-sub">App Store でダウンロード</span>
+<span class="badge-main">App Store</span>
+</span>
+</a>
+<a class="btn secondary" href="support.html">サポートを見る</a>
+</div>
+<div class="hero-meta">
+<span class="meta-pill">🔐 完全オフライン</span>
+<span class="meta-pill">🚫 データ収集なし</span>
+<span class="meta-pill">💳 買い切り</span>
+<span class="meta-pill">📱 iPhone 向け</span>
+<span class="meta-pill">✍️ 情報一元管理</span>
+</div>
+</div>
+</header>
+<section class="section">
+<section class="ftfacts" aria-label="アプリ概要">
+  <h2>アプリ概要</h2>
+  <table>
+    <tr><th>対応OS</th><td>iOS 17.0 以降</td></tr>
+    <tr><th>価格</th><td>買い切り（アプリ内課金なし）</td></tr>
+    <tr><th>バージョン</th><td>1.0</td></tr>
+    <tr><th>サイズ</th><td>約 12 MB</td></tr>
+    <tr><th>カテゴリ</th><td>ライフスタイル</td></tr>
+    <tr><th>対象年齢</th><td>4+</td></tr>
+    <tr><th>対象ユーザー</th><td>終活を検討している人・故人の情報整理者</td></tr>
+    <tr><th>データの扱い</th><td>端末内保存のみ（クラウド同期なし）</td></tr>
+    <tr><th>開発者</th><td>freetokyo（YANGLI CHEN）</td></tr>
+    <tr><th>最終更新</th><td>2026-06-27</td></tr>
+  </table>
+</section>
+<h2 class="section-title">できること</h2>
+<p class="section-lead">終活に必要な情報をカテゴリ別に整理し、親しい人への引き継ぎをシンプルに実現します。</p>
+<div class="grid">
+<article class="card">
+<h3>📋 基本情報の記録</h3>
+<ul>
+<li>氏名、生年月日、連絡先などの基本情報</li>
+<li>住所、勤務先、緊急連絡先の登録</li>
+<li>マイナンバー、各種証件のメモ</li>
+</ul>
+</article>
+<article class="card">
+<h3>💰 資産・契約の整理</h3>
+<ul>
+<li>銀行口座、クレジットカード、保険の記録</li>
+<li>不動産、車などの資産リスト</li>
+<li>契約・サブスクリプションの一覧</li>
+</ul>
+</article>
+<article class="card">
+<h3>👥 相続・引き継ぎ情報</h3>
+<ul>
+<li>相続人の情報登録</li>
+<li>遺言・希望事項のメモ</li>
+<li>ペット、デジタルデータの引き継ぎ</li>
+</ul>
+</article>
+<article class="card">
+<h3>📱 デジタル遺産管理</h3>
+<ul>
+<li>SNS、メールアカウントのリスト</li>
+<li>パスワード管理のヒント</li>
+<li>重要なデータの保管場所</li>
+</ul>
+</article>
+<article class="card">
+<h3>📝 葬儀・埋葬の希望</h3>
+<ul>
+<li>葬儀形式の希望（選択肢式）</li>
+<li>埋葬地、納骨希望の記録</li>
+<li>宗教・宗派の選択</li>
+</ul>
+</article>
+<article class="card">
+<h3>🔐 プライバシー保護</h3>
+<ul>
+<li>すべてのデータはiPhoneに保存</li>
+<li>インターネット送信なし</li>
+<li>アカウント不要、データ収集なし</li>
+</ul>
+</article>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">こんな人に向いています</h2>
+<div class="grid">
+<article class="card">
+<h3>終活を始めたい人</h3>
+<p>これからの人生と、亡くなった後のことを考えたい。そういうときの最初の一歩をサポートします。</p>
+</article>
+<article class="card">
+<h3>親御さんの情報を整理したい人</h3>
+<p>親が亡くなったあと、どこに何があるか分からず困った経験がありますか？親が元気なうちに、親子で一緒に記録することで、将来の手続きがずっと楽になります。</p>
+</article>
+<article class="card">
+<h3>個人情報をクラウドに預けたくない人</h3>
+<p>iPhoneの中だけで完結。あなたのデータはあなたのiPhoneにだけ存在します。</p>
+</article>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">よくある疑問</h2>
+<div class="faq-list">
+<article class="faq-item">
+<strong>パスワードを忘れたらどうなりますか？</strong>
+<p>Yuzuriはアカウント不要なので、アプリ自体にパスワードはありません。iPhoneのロック画面と同じセキュリティで保護されます。</p>
+</article>
+<article class="faq-item">
+<strong>データを他のiPhoneに移せますか？</strong>
+<p>iCloudバックアップを有効にしておくと、新しいiPhoneでも同じデータが復元されます。</p>
+</article>
+<article class="faq-item">
+<strong>親族と情報を共有できますか？</strong>
+<p>Yuzuriのデータは端末内保存です。情報を共有する場合は、iPhoneを一緒に見たり、手書きで記録を写したりするなど、あなたが主体的に選んだ方法で行えます。</p>
+</article>
+<article class="faq-item">
+<strong>iCloudには保存されますか？</strong>
+<p>iPhoneのバックアップ設定に従います。iCloudバックアップをオンにしていれば、デバイス紛失時も新しいiPhoneで復元できます。</p>
+</article>
+</div>
+<div class="cta-row">
+<a class="btn primary" href="support.html">FAQをもっと見る</a>
+</div>
+</section>
+<section class="section">
+<div class="grid">
+<article class="card">
+<h2>法的・サポート文書</h2>
+<ul>
+<li><a href="support.html">サポート / よくある質問</a></li>
+<li><a href="privacy.html">プライバシーポリシー</a></li>
+<li><a href="terms.html">利用規約</a></li>
+</ul>
+</article>
+<article class="card">
+<h2>ご利用前に</h2>
+<ul>
+<li>このアプリはエンディングノートのテンプレート提供アプリです。法的な遺言書作成はできません。</li>
+<li>重要な決定については、弁護士など専門家への相談をお勧めします。</li>
+</ul>
+</article>
+</div>
+</section>
+<div aria-label="SNS share" class="share-section">
+<h2>シェアする</h2>
+<div class="share-btns">
+<a class="share-btn x" href="https://x.com/intent/tweet?text=Yuzuri%20%7C%20%E5%AE%8C%E5%85%A8%E3%82%AA%E3%83%95%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%AE%E7%B5%82%E6%B4%BB%E3%83%8E%E3%83%BC%E3%83%88%20for%20iPhone&amp;url=https%3A%2F%2Ffreetokyo.github.io%2Fweb%2Fyuzuri%2F&amp;hashtags=終活,終活ノート,エンディングノート,iPhone" rel="noopener" target="_blank">
+X でシェア
+</a>
+<a class="share-btn line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ffreetokyo.github.io%2Fweb%2Fyuzuri%2F" rel="noopener" target="_blank">
+LINE でシェア
+</a>
+<button class="share-btn copy" onclick="copyURL(this)">URLをコピー</button>
+</div>
+<p class="hashtags">おすすめハッシュタグ: #終活 #終活ノート #エンディングノート #相続 #iPhone #アプリ</p>
+</div>
+<footer>
+<div style="margin-bottom:14px;text-align:center;line-height:1.4;">
+<a href="/web/" style="color:inherit;text-decoration:none;font-size:13px;">
+← freetokyo apps（アプリ一覧へ）
+</a>
+</div>
+<div>
+連絡先: freetokyo2020@yahoo.co.jp
+</div>
+<div style="margin-top:8px;">
+<a href="privacy.html">プライバシーポリシー</a> ·
+<a href="terms.html">利用規約</a> ·
+<a href="support.html">サポート</a>
+</div>
+</footer>
+<script>
+function copyURL(btn) {
+  navigator.clipboard.writeText(location.href).then(function() {
+    var orig = btn.textContent;
+    btn.textContent = "✓ Copied!";
+    setTimeout(function() { btn.textContent = orig; }, 1800);
+  });
+}
+</script>
 </body>
 </html>

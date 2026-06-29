@@ -2,18 +2,197 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yuzuri サポート</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow"/>
+  <title>Yuzuri | サポート・よくある質問</title>
+  <meta name="description" content="Yuzuriのサポートページ。データ保存、購入復元、使い方など、よくある質問にお答えします。"/>
+  <link rel="canonical" href="https://freetokyo.github.io/web/yuzuri/support.html"/>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      color: #2b1d1a;
+      background: #faf8fb;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      background: rgba(36, 23, 23, 0.94);
+      backdrop-filter: blur(12px);
+      margin: -20px -20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a {
+      color: #dbe7f3;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 32px 0 20px;
+      font-size: 20px;
+      border-bottom: 2px solid #e8dce8;
+      padding-bottom: 8px;
+    }
+    .faq-item {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e8dce8;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #241717;
+    }
+    .faq-item p {
+      margin: 0;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 48px;
+      padding: 24px 0;
+      color: #7a6b7a;
+      font-size: 13px;
+      border-top: 1px solid #e8dce8;
+      text-align: center;
+    }
+    footer a { color: #6b5b95; text-decoration: none; }
+    .contact-section {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f5f1f8;
+      border-radius: 12px;
+      border-left: 4px solid #6b5b95;
+    }
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      h1 { font-size: 24px; }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>Yuzuri サポート</h1>
-    <h2>よくある質問</h2>
-    <p><strong>無料で使えますか？</strong><br />基本無料でお試しいただけます。一部機能は買い切り（サブスクなし）で解放します。</p>
-    <p><strong>購入を復元したい</strong><br />設定 → 「購入を復元」から復元できます。</p>
-    <p><strong>データはどこに保存されますか？</strong><br />すべて端末内に保存され、外部送信はありません。</p>
-    <h2>お問い合わせ</h2>
-    <p>メール: TODO@example.com</p>
-  </main>
+<nav>
+  <a class="logo" href="index.html">YUZURI</a>
+  <div class="nav-links">
+    <a href="index.html">トップ</a>
+    <a href="privacy.html">プライバシー</a>
+    <a href="terms.html">利用規約</a>
+  </div>
+</nav>
+<main>
+<h1>サポート・よくある質問</h1>
+
+<h2>よくある質問</h2>
+
+<div class="faq-item">
+  <strong>Q. 無料で使えますか？</strong>
+  <p>はい、Yuzuriは買い切りアプリです。初回購入後、アプリ内課金は一切ありません。サブスクリプションも不要です。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. データはどこに保存されますか？</strong>
+  <p>すべてのデータはiPhone内のみに保存されます。クラウドサーバーへの送信や同期は行いません。iPhoneの紛失に備えたい場合は、iPhoneのバックアップ機能（iCloud）をご利用ください。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. 個人情報は収集されていますか？</strong>
+  <p>いいえ。本アプリは個人情報・利用データを一切外部に送信しません。分析ツールや広告SDKも使用していません。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. 購入を別のiPhoneに移したい</strong>
+  <p>新しいiPhoneでアプリをダウンロード後、アプリ内の「購入を復元」から復元できます。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. パスワードを忘れた場合は？</strong>
+  <p>Yuzuriはアカウント登録不要なため、パスワードはありません。iPhoneのロック画面と同じセキュリティで保護されます。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. データを家族と共有できますか？</strong>
+  <p>Yuzuriのデータは端末内保存です。共有ご希望の場合は、iPhone本体を見ていただくか、手書きでメモをお取りいただくなど、お客様が主体的に選んだ方法でお願いします。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. iCloudバックアップの対象ですか？</strong>
+  <p>iPhoneのバックアップ設定に従います。デフォルトではiCloudバックアップの対象になります。iCloudバックアップを無効にすると、データはiPhone内のみに保存されます。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. 新しいiPhoneに乗り替えたい</strong>
+  <p>旧iPhoneでiCloudバックアップを有効にしておくと、新しいiPhoneでも同じデータが復元されます。</p>
+</div>
+
+<div class="faq-item">
+  <strong>Q. サブスクリプションが突然請求されました</strong>
+  <p>Yuzuriにはサブスクリプション機能はありません。もし請求があった場合は、お手数ですが<a href="mailto:freetokyo2020@yahoo.co.jp">メール</a>までお知らせください。</p>
+</div>
+
+<h2>トラブルシューティング</h2>
+
+<div class="faq-item">
+  <strong>アプリが起動しない</strong>
+  <p>次の順番でお試しください：<br/>
+  1. iPhoneを再起動してください<br/>
+  2. App Storeからアプリの更新をご確認ください<br/>
+  3. 問題が続く場合は<a href="mailto:freetokyo2020@yahoo.co.jp">お問い合わせ</a>ください。
+  </p>
+</div>
+
+<div class="faq-item">
+  <strong>データが表示されない</strong>
+  <p>次のいずれかの可能性があります：<br/>
+  1. iPhoneを再起動してください<br/>
+  2. アプリを完全に終了（マルチタスク画面から削除）してから、再度開いてください<br/>
+  3. 問題が続く場合は<a href="mailto:freetokyo2020@yahoo.co.jp">お問い合わせ</a>ください。
+  </p>
+</div>
+
+<h2>お問い合わせ</h2>
+
+<div class="contact-section">
+<p><strong>お問い合わせ方法</strong></p>
+<p>ご質問・ご要望は、以下のメールアドレスまでお気軽にお問い合わせください。</p>
+<p style="margin:0;"><strong>メール: <a href="mailto:freetokyo2020@yahoo.co.jp" style="color:#6b5b95;">freetokyo2020@yahoo.co.jp</a></strong></p>
+<p style="margin-top:12px;font-size:14px;">お返事に数日いただく場合がございます。予めご了承ください。</p>
+</div>
+
+</main>
+
+<footer>
+<p><a href="index.html">← トップに戻る</a></p>
+<p>© freetokyo. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
