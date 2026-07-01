@@ -1,0 +1,21 @@
+# Yuzuri
+
+> 完全オフラインの終活ノートアプリ。アカウント不要・データ収集なしで、資産・保険・連絡先・想いを一冊のノートに残せる。対象: 終活の準備をしたい人、家族に情報を引き継ぎたい人。
+
+App Store: https://apps.apple.com/app/id6784874949
+Web: https://freetokyo.github.io/web/yuzuri/
+開発者: freetokyo（CHEN YANGLI）
+対応: iOS 17.0 以降 / 価格: 買い切り（サブスクリプション不要）
+最終更新: 2026-07-01
+
+## 主な機能
+- 資産・保険・連絡先・想いの一元記録
+- アカウント登録不要
+- データ収集なし・完全オフライン
+- 端末内保存
+
+## ページ
+- 紹介: https://freetokyo.github.io/web/yuzuri/
+- サポート / FAQ: https://freetokyo.github.io/web/yuzuri/support.html
+- プライバシー: https://freetokyo.github.io/web/yuzuri/privacy.html
+- 利用規約: https://freetokyo.github.io/web/yuzuri/terms.html
